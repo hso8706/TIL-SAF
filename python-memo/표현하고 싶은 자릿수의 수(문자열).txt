@@ -1,0 +1,9 @@
+# String 함수
+### zfill()
+- 사용
+```python
+num_str = str(7)
+print(num_str.zfill(3))
+
+# 출력 : 007
+```
