@@ -54,3 +54,9 @@ print(sum_list(lst))
 ### 특정 값이 list 내에 존재하는지 확인
 - `in`, `not in` 키워드
 
+### 주소값 확인 함수
+- id()
+```
+num = 10
+address = id(num) # 1844833315408
+```
