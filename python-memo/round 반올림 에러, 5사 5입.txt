@@ -1,0 +1,10 @@
+https://m.blog.naver.com/herbdoc95/221574077380
+
+### 해결법
+```python
+def round2(num):
+	return int(num) + (1 if (num - int(num))>=0.5 else 0)
+
+# 3항 연산자로 해결
+# int()를 사용한 형변환은 버림을 기본으로한다.
+```

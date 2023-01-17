@@ -1,0 +1,5 @@
+### 빈 2차원 배열 만들기; list comprehension 이용
+- [`code` for `variable` in `iterable`]
+code : 리스트 요소 값에 해당될 코드 작성
+varible : 순회하는 iterable 을 할당하는 변수
+iterable : 순회할 범위
