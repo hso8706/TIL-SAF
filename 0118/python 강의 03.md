@@ -25,6 +25,7 @@
   - 문서화
   - 범위
   - 결과값
+  <img width="40%" src="https://user-images.githubusercontent.com/103169947/213060640-c65cb7d0-77d0-45ad-9537-76a285a43dc4.PNG"/>
 
 - 선언과 호출  
   - 선언  
