@@ -1,0 +1,8 @@
+dictionary는 key-value 쌍을 하나의 데이터라고 하면, 데이터끼리의 순서는 상관없다.
+
+예시
+dict_a = { 'a': 1, 'b': 2 }
+dict_b = { 'b': 2, 'a': 1 }
+
+print(dict_a == dict_b) # True
+print(dict_a is dict_b) # False, 값은 같지만 다른 딕셔너리.
