@@ -1,0 +1,13 @@
+# List 정렬
+### 오름차순
+```python
+list.sort()
+```
+### 내림차순
+```python
+list.sort(reverse = True)
+```
+
+### `list.sort()`와 `sorted(list)`
+- 반환값의 차이
+`list.sort()`는 반환값이 존재하지 않고, `sorted(list)`는 정렬된 새 리스트를 반환한다.
