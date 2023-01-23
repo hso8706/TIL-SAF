@@ -1,6 +1,17 @@
-https://m.blog.naver.com/herbdoc95/221574077380
+# 파이썬 반올림 해결법
 
-### 해결법
+### round() 함수 사용
+- round( 값, 반올림 받을 자릿수 )
+
+### 파이썬 format 사용
+- '{: .2f}'.format( 값 )  
+: ` .2`는 소수점 2자리 까지만 출력하겠다는 의미
+
+### 파이썬 f-string 사용
+- f'{: .2f}'  
+: ` .2`는 소수점 2자리 까지만 출력하겠다는 의미
+
+### 해결법 (3항 연산자)
 ```python
 def round2(num):
 	return int(num) + (1 if (num - int(num))>=0.5 else 0)
@@ -8,3 +19,33 @@ def round2(num):
 # 3항 연산자로 해결
 # int()를 사용한 형변환은 버림을 기본으로한다.
 ```
+
+### 예시   
+```python
+def round_perfect(n):
+    return int(n) + (1 if (n - int(n)) >= 0.5 else 0)
+
+a = 24.5
+b = 25.5
+c = 26.5
+
+print(a, b, c) # 24.5 25.5 26.5
+print(round(a, 0), round(b, 0), round(c, 0)) # 24.0 26.0 26.0
+print('{:.0f}'.format(a), '{:.0f}'.format(b), '{:.0f}'.format(c)) # 24 26 26
+print(f'{a:.0f}', f'{b:.0f}', f'{c:.0f}') # 24 26 26
+print(round_perfect(a), round_perfect(b), round_perfect(c)) # 25 26 27
+```
+
+### 완벽 해결
+```python
+def round_perfect(n, point = 0):
+    a = n * (10 ** point)
+    result = int(a) + (1 if (a - int(a)) >= 0.5 else 0)
+    return result / (10 ** point)
+```
+
+### 연계
+- `부동소수점 오차 주의`와 같이 볼 것
+### 참고 링크
+- https://m.blog.naver.com/herbdoc95/221574077380
+- https://blockdmask.tistory.com/534

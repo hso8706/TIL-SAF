@@ -5,4 +5,4 @@
 
 steak = 50000
 vat = 0.15
-print(f'{steak}', f'{int(steak * vat)}', f'{int(steak + (steak*vat))}')
+print(f'{int(steak)}', f'{int(steak * vat)}', f'{int(steak + (steak*vat))}')
