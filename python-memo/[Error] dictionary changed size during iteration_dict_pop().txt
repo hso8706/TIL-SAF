@@ -1,0 +1,48 @@
+# RuntimeError: dictionary changed size during iteration
+
+### 에러 코드  
+```python
+def supervisiong_online_test(test_status):
+    result_dict = {}
+    cheating_list = []
+    result_status = test_status # 문제 예상 지점
+    for key in test_status.keys(): # 에러 지점
+        if test_status[key] == 'cheating':
+            cheating_list.append(key)
+            result_status.pop(key)
+        elif test_status[key] == 'sleeping':
+            result_status[key] = 'solving'
+    cheating_list.sort()
+
+    result_dict['cheating_list'] = cheating_list
+    result_dict['result_status'] = result_status
+
+    return result_dict
+```
+
+### 에러 지점   
+: 몸체 코드 내에 존재하는 반복문에서 사용되는 pop() 함수로 인해 key의 변경이 있어 에러가 난다는 에러 코드 문구 확인.  
+: 이를 방지하기 위해서 인자로 주어지는 매개변수(test_status)를 바로 변경하는 것이 아닌, result_status에 test_status를 할당하고 작업했는데도 에러를 접했음.  
+: 명확히는 더 알아봐야하지만 `=`으로 딕셔너리를 할당하는 것은 값의 복사가 되는 것이 아니고, 연결되는 느낌이라고 판단함.  
+
+### 문제 해결  
+: 딕셔너리를 연결하는 것이 아닌 복사하는 메서드를 찾아 적용.  
+: copy() 메서드 사용  
+```python
+def supervisiong_online_test(test_status):
+    result_dict = {}
+    cheating_list = []
+    result_status = test_status.copy() # 에러 해결 지점
+    for key in test_status.keys():
+        if test_status[key] == 'cheating':
+            cheating_list.append(key)
+            result_status.pop(key)
+        elif test_status[key] == 'sleeping':
+            result_status[key] = 'solving'
+    cheating_list.sort()
+
+    result_dict['cheating_list'] = cheating_list
+    result_dict['result_status'] = result_status
+
+    return result_dict
+```

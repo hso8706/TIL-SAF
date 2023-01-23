@@ -1,0 +1,7 @@
+# dictionary 요소 제거
+
+### del 키워드
+del dict_name[dict_key]
+
+### pop 메서드
+dict_name.poop(dict_key)
