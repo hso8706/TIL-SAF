@@ -1,0 +1,9 @@
+# random 모듈 사용
+### random.random() 메서드  
+: 0 ~ 1 사이의 랜덤 실수 리턴
+### random.uniform(n1, n2) 메서드
+: n1 ~ n2 사이의 랜덤 실수 리턴
+### random.choice(sequence_type) 메서드  
+: sequence_type 데이터 원소를 랜덤하게 선택
+### random.shuffle(sequence_type) 메서드  
+: sequence_type 데이터 원소의 순서를 랜덤하게 바꿈
