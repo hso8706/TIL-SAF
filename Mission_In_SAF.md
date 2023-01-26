@@ -19,5 +19,8 @@
 : 학습 과정 TIL  
 : 개인 학습 TIL  
 
+- Algorithm 문제 풀기  
+: 소화할 수 있는 양을 설정해서 알고리즘 쭉 풀어나가기
+
 # [Weekly] Job Searching
 : 빠른 취직을 위해 미리 잡 서칭
