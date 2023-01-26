@@ -1,0 +1,10 @@
+## 에러 코드
+SyntaxError: (unicode error) 'unicodeescape' codec can't decode bytes in position 2-3: truncated \UXXXXXXXX escape
+
+## 에러 상황
+: 파일 입출력 연습하는 도중.
+: 블로그를 참고하여 공부하고, 파일 탐색기에 출력된 파일 경오를 그대로 옮겼음에도 불구하고 파일 경로에서 자꾸 에러 발생
+
+## 에러 해결
+: 해당 에러는 파일 경로에 있는 `\`을 인식하지 못하여 발생하는 문제였다.
+: `\` 이를 `/` 로 수정하여 해결
