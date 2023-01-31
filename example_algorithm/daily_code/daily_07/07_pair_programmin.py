@@ -10,9 +10,13 @@ class ClassHelper:
         return random.sample(self.students, idx)
 
     def match_pair(self):
-        if len(self.students) == 1 or len(self.students) == 3
-        return random.sample(self.students, 2)
-
+        lst_return = []
+        random.shuffle(self.students)
+        while len(self.students) > 3:
+            temp_lst = [self.students.pop(), self.students.pop()]
+            lst_return.append(temp_lst)
+        lst_return.append(self.students)
+        return lst_return
 
 
 ch = ClassHelper(['김해피', '이해킹', '조민지', '박영수', '정민수'])
