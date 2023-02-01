@@ -1,0 +1,4 @@
+- 한 줄 실행
+  - ctrl + enter
+- 전체 실행
+  - ctrl + shift + enter
