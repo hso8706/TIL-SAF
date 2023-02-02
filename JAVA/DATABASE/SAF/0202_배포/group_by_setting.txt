@@ -1,0 +1,6 @@
+select @@sql_mode;
+
+
+# ONLY_FULL_GROUP_BY제거
+
+SET SESSION sql_mode = 'NO_ENGINE_SUBSTITUTION,STRICT_TRANS_TABLES'; 
