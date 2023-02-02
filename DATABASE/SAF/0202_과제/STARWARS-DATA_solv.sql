@@ -26,7 +26,7 @@ create table casting(
 
 -- 4
 create table roles(
-	roleid int,
+	roleid int primary key,
     rolename varchar(20)
 );
 
@@ -39,5 +39,22 @@ alter table starwars
 add constraint episode_pk primary key(episodeid);
 alter table characters
 add constraint characters_pk primary key(characterid);
+-- alter table casting
+-- add constraint casting_pk primary key(episodeid);
+
+-- 6
+alter table characters
+add constraint characters_fk foreign key(roleid)
+references roles(roleid);
+
+-- 7
 alter table casting
-add constraint casting_pk primary key(episodeid);
+add constraint casting_pk primary key(episodeid, characterid);
+
+alter table casting
+add constraint casting_fk_epi foreign key(episodeid)
+references starwars(episodeid);
+
+alter table casting
+add constraint casting_fk_cha foreign key(characterid)
+references characters(characterid);
