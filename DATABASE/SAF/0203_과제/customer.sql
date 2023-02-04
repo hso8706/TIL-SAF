@@ -1,4 +1,7 @@
- create table customer(num integer primary key,
+create database scottdb;
+use scottdb;
+
+create table customer(num integer primary key,
  name varchar(20) not null,
  address varchar(30) not null
 );

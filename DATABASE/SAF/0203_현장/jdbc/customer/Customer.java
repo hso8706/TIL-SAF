@@ -1,14 +1,13 @@
 package com.jdbc.customer;
-//vo, dto: 값을 저장하는 객체
-//customer 테이블의 레코드 한 건의 정보를 저장하기 위한 객체
+
+//vo, dto  : 값을 저장하는 객체
+//customer 테이블의 레코드 한 건의 정보를 저장하기위한 객체
 public class Customer {
 	private String num, name, address;
-
-	public Customer() {
-	}
 	
+	public Customer() {}
+
 	public Customer(String num, String name, String address) {
-		super();
 		this.num = num;
 		this.name = name;
 		this.address = address;
@@ -36,6 +35,11 @@ public class Customer {
 
 	public void setAddress(String address) {
 		this.address = address;
+	}
+
+	@Override
+	public String toString() {
+		return "Customer [num=" + num + ", name=" + name + ", address=" + address + "]";
 	}
 	
 }
