@@ -27,6 +27,7 @@
   - TCL : Transaction Control Language
     - COMMIT, ROLLBACK
 
+## DML(SELECT)
 ### SELECT
 - select 사용 기본 구조
     ```mysql
@@ -88,4 +89,34 @@
   - 조건문을 특정 범위 내로 한정할 때 사용하는 키워드
   - `in`과 다른 점은 대응되는 값의 범위를 일일이 지정하는게 아닌 부등호로 지정하듯 범위를 지정할 수 있다는 점이다.
 - `is null, is not null`
-  - where 조건문에서 조건으로 null 값을 체크하는 키워드 
+  - where 조건문에서 조건으로 null 값을 체크하는 키워드
+- `like`
+  - where 조건문의 조건으로 정확히 일치하는 값이 아닌 비슷한 값을 호출하기 위해 사용하는 키워드
+  - 정규표현식을 사용
+  - `%`: 해당 위치에 0개 이상의 문자가 온다. 0일수도 있기 때문에 안와도 그만
+  - `_`: 해당 언더바만큼 문자가 존재한다. 문자열에서 문자 위치를 표현할 때 주로 사용
+
+### Select 논리 연산
+- not 연산
+  - true -> false
+  - false -> true
+  - null -> null
+- and 연산
+  - true, true 일 때만 결과가 true, 나머진 false
+  - 특히, false가 첫 항으로 나오면 뒤는 보지도 않음. (두번째 항에 null이 오는 상황에도 적용)
+  - null이 포함된 논리 연산
+    - true & null || null & true || null & null == null
+    - false & null || null & false == false
+- false 연산
+  - 하나만 true여도 모두 true, false or flase 일 때만 false 결과가 나온다.
+  - 첫 항이 true면, 뒤도 안보고 true가 된다. (두번째 항에 null이 오는 상황에도 적용)
+  - null이 포함된 논리 연산
+    - true & null || null & true == true
+    - false or null || null or false || null or null == null
+
+### Select Order by
+- `order by 컬럼명 정렬방식`
+  - 해당 컬럼을 오름차순(asc), 내림차순(desc) 정렬하는 키워드
+  - 쿼리문 전체에서 가장 마지막 우선순위로 실행된다.
+
+## SET Operation
