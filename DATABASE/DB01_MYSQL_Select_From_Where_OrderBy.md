@@ -29,6 +29,16 @@
 
 ## DML(SELECT)
 ### SELECT
+- select 키워드
+  - 필수 옵션
+    - SELECT [DISTINCT | ALL] + 추출할_COLUMN(애트리뷰트)  
+        // default == ALL, DISTINCT는 중복 제거 옵션
+    - FROM  + 추출에 필요한 테이블
+  - 선택 옵션
+    - WHERE
+    - GROUP BY
+    - HAVING
+    - ORDER BY
 - select 사용 기본 구조
     ```mysql
     select id, name

@@ -2,9 +2,6 @@
 ### Index
 1. 내장함수
 2. Aggregation
-3. Group By Clause
-4. DML(insert, update, delete)
-5. Transaction
 
 ## 내장함수
 ### MYSQL 내장함수
