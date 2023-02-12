@@ -96,6 +96,7 @@
   where id in (10, 11, 12, 13, 14, 100);
   ```
 - `between`
+  - `between + col_name + range_min + and + range_max`
   - 조건문을 특정 범위 내로 한정할 때 사용하는 키워드
   - `in`과 다른 점은 대응되는 값의 범위를 일일이 지정하는게 아닌 부등호로 지정하듯 범위를 지정할 수 있다는 점이다.
 - `is null, is not null`

@@ -2,21 +2,19 @@ package com.jdbc;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-import com.mysql.cj.protocol.Resultset;
 
-public class SelectPreparedDept {
+public class SelectAll {
 
 	public static void main(String[] args) {
 		try {			
 			String driver = "com.mysql.cj.jdbc.Driver";
 			//jdbc url : 
-			//jdbc : mysql(protocol name) :  통신을 위해서는 프로토콜이 필요함
+			//jdbc : protocol name, 통신을 위해서는 프로토콜이 필요함
 			//mysql : 데이터베이스 이름, DB NAME
-			//localhost:3306(Sever : port num) : 데이터베이스가 있는 서버  
+			//localhost:3306 : 데이터베이스가 있는 서버, Sever And port num 
 			//scottdb : 사용할 데이터베이스 이름
 			// ? : 구분자
 			// severTimezone=UTC
@@ -25,8 +23,7 @@ public class SelectPreparedDept {
 			String user = "scott"; // 계정명
 			String password = "tiger"; //pw
 			
-			String query = "select empid, name, phone, jobid, deptid "
-					+ "from myemp where deptid = ?"; //query 문
+			String query = "select empid, name, phone, jobid, deptid from myemp where deptid  = 30"; //query 문
 			//String query = "select empid, name, phone from myemp"; //query 문
 			
 			//1. driver loading 
@@ -36,14 +33,11 @@ public class SelectPreparedDept {
 			Connection con = DriverManager.getConnection(url, user, password);
 			
 			//3. Statement Create
-			//Statement stat = con.createStatement();
-			PreparedStatement pstat = con.prepareStatement(query);
-			
-			//3.1 ? 에 값 setting
-			pstat.setString(1, "20");
+			Statement stat = con.createStatement();
+					
 			
 			//4. Query send
-			ResultSet rs = pstat.executeQuery();
+			ResultSet rs = stat.executeQuery(query);
 			
 			//5. reslut processing
 			while(rs.next()) {
@@ -58,7 +52,7 @@ public class SelectPreparedDept {
 			
 			//6. close
 			rs.close();
-			pstat.close();
+			stat.close();
 			con.close();
 		} catch (Exception e) {
 			e.printStackTrace();
