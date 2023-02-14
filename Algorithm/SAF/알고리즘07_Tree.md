@@ -50,4 +50,3 @@
 - 부여 방식
   - 루트를 1로 부여
   - 좌에서 우 방향으로 숫자 상승, 다음 레벨로 넘어갈 경우 좌측에서 다시 시작
-  - ![image](https://user-images.githubusercontent.com/103169947/218605721-a9ab3d66-ec60-4e91-84b1-6d6c2f32a23e.png)
