@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- form: 사용자가 입력한 값을 서버로 전송할 때 사용하는 태그 -->
+    <h1>Form Test</h1>
+    <form action="welcome.html">
+      <fieldset> <!-- 하나의 집합으로 묶어주는 선 태그-->
+        <legend>사용자 정보</legend> <!-- 필드셋의 이름이 되는 부분 -->
+        USER NAME: <input type="text" name="name" /><br /><!-- text 타입을 기준으로 action 에 넘겨줌-->
+        USER EMAIL: <input type="email" name="email" /><br />
+        USER PASSWORD: <input type="password" name="password" /><br />
+        color: <input type="color"><br>
+        date: <input type="date"><br>
+        number: <input type="number"><br>
+        url: <input type="url"><br>
+        range: <input type="range"><br>
+        
+        <input type="reset" value="취소" />
+        <input type="submit" value="전송" />
+      </fieldset>
+    </form>
+  </body>
+</html>

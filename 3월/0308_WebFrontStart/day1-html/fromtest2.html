@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Form Test2</h1>
+    <form action="welcome.html">
+        <button>press</button> <!-- input button을 하도 많이쓰니까 button 태그로 따로 만들어줌-->
+        <input type="button" value="press"><br>
+        <input type="checkbox">one
+        <input type="checkbox">two
+        <input type="checkbox">three <br>
+        <input type="radio" name="season">spring
+        <input type="radio" name="season">summer<!--name 같은걸 붙여줘야 백엔드에서 사용 가능-->
+        <input type="radio" name="season2">autumn<!--name으로 그룹 지정같은 느낌으로 사용, 다른 그룹의 radio는 동시 선택이 가능함-->
+        <input type="radio" name="season2">winter <br>
+        <select name="drink" id="drink"><!--name은 Java(Server)쪽에서, id는 JS(client)에서 찾아쓰기 위함-->
+            <option value="1">coffee</option> <!-- value로 값을 server에 넘김 -->
+            <option value="2">juice</option>
+            <option value="3">tea</option>
+        </select><br>
+        <textarea name="ta" id="ta" cols="30" rows="10"></textarea> <!--여러 줄 입력을 받는 태그-->
+    </form>
+</body>
+</html>
