@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: cornflowerblue;
+        }
+        ul li{/*하위 요소 스타일 처리*/
+            display: inline;
+            padding: 0px 10px;
+            letter-spacing: 5px; /*자간*/
+
+        }
+        ul li a{/*ul내의 li내의 a태크*/
+            text-decoration: none; /*밑 줄 제거*/
+            color: green; /*.green 태그에 안걸려서 여기에 임시로 달음*/
+        }
+
+        .menu{
+            text-align: center;
+            border-top: 1px solid red;
+            border-bottom: 1px solid red;
+            padding: 10px 0px;
+        }
+        .green{
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <ul class="menu green"> <!--클래스 여러개 적용하는법-->
+        <li><a href="#">회사소개</a></li>
+        <li><a href="#">도서</a></li>
+        <li><a href="#">자료실</a></li>
+        <li><a href="#">질문답변</a></li>
+        <li><a href="#">동영상강의</a></li>
+    </ul>
+</body>
+</html>

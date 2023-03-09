@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 100px; /*변의 둘레, 100 x 100*/
+            height: 100px;
+            position:absolute;
+        }
+
+        #div1{
+            background-color: darkred;
+            top: 100px; /*browser 기준 떨어진 거리*/
+            left: 100px; 
+            position:absolute; /*parent 를 기준으로 할 때 사용*/
+            border: solid 1px green;
+            width: 300px;
+            height: 300px;
+        }
+        #div2{
+            width: 50px;
+            height: 50px;
+            background-color: darkolivegreen;
+            bottom: 0px;
+            right: 0px;
+            position:absolute;
+            border: solid 1px pink;
+        }
+        #div3{
+            width: 100px;
+            height: 100px;
+            background-color: darkgoldenrod;
+            top: 50px;
+            left: 50px;
+            position:absolute;
+        }
+    </style>
+</head>
+<body>
+    <h1>absolute position</h1>
+    <div id="div1">div1
+        <div id="div2">div2</div>
+        <div id="div3">div3</div>
+    </div>
+</body>
+</html>

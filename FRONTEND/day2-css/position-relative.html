@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 100px; /*변의 둘레, 100 x 100*/
+            height: 100px;
+            position: relative;
+        }
+
+        #div1{
+            background-color: darkred;
+            top: 50px; /*browser의 기본값 기준에서 떨어진 거리*/
+            left: 50px; 
+        }
+        #div2{
+            background-color: darkolivegreen;
+            top: 150px;
+            left: 150px;
+        }
+        #div3{
+            background-color: darkgoldenrod;
+            top: 250px;
+            left: 350px;
+        }
+    </style>
+</head>
+<body>
+    <!--static 위 기준으로 원래 들어가야 할 자리에서 떨어져서 배치 됨.-->
+    <h1>relative position</h1>
+    <div id="div1">div1</div>
+    <div id="div2">div2</div>
+    <div id="div3">div3</div>
+</body>
+</html>

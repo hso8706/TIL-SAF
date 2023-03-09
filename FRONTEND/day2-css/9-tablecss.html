@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+  table{
+    width: 100%;
+    border-top: 1px solid gray;
+    border-collapse: collapse; /*기본 간격을 무너뜨리는 옵션, 즉 우리가 아는 테이블처럼 선만으로 구성되게 해줌*/
+  }
+  th, td{
+    border-bottom: 1px solid green;
+    padding: 10px;
+    text-align: center;
+  }
+  thead tr{
+    background-color: azure;
+    color: black;
+  }
+  tbody tr:nth-child(2n){
+    background-color: yellowgreen;
+  }
+  tbody tr:nth-child(2n+1){
+    background-color: yellow;
+  }
+</style>
+</head>
+<body>
+<table>
+	  <caption>customer information</caption>
+      <thead><!--table head-->
+        <tr>
+          <th>Lorem</th><th>Ipsum</th><th>Dolor</th>
+        </tr>
+      </thead>
+      <tbody><!--table body-->
+        <tr>
+          <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
+        </tr>
+        <tr>
+          <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
+        </tr>
+        <tr>
+          <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
+        </tr>
+        <tr>
+          <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
+        </tr>
+        <tr>
+          <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
+        </tr>
+        <tr>
+          <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
+        </tr>
+      </tbody>
+    </table>
+</body>
+</html>
