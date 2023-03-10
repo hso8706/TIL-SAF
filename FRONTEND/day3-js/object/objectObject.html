@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //3. Object 객체를 이용하는 방법
+
+        var u1 = new Object();
+        u1.name = "genie kim";
+        u1.age = 25;
+        u1.showInfo = function(){
+            document.write("name: " + this.name + ", age: " + this.age);
+        }
+
+        u1.showInfo();
+        console.log(u1.name);
+        console.log(u1.age);
+        console.log(u1['name']);//대괄호로도 접근 가능. 대괄호 내부에 String 형식의 필드명 제공 + 변수로도 제공 가능
+        var str = "name";
+        console.log(u1[str]);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

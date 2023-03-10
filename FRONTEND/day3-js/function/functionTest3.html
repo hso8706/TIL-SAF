@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function max(a, b){
+            return (a>b)? a : b;
+        }
+        function printName(name){
+            return "hello!" + name;
+        }
+        function getArea(r){
+            return r*r*3.14;
+        }
+        function reverse(flag){
+            return !flag;
+        }
+        function sum(arr){
+            var sum = 0;
+            for(var i in arr){
+                sum = arr[i] + sum;
+            }
+            return sum;
+        }
+        function loopString(msg, count){
+            for(var i=0; i<count; i++){
+                console.log(msg);
+            }
+        }
+        function calc(a, b, op){
+            switch(op){
+                case '+':
+                    alert(a + b);
+                    break;
+                case '-':
+                    alert(a - b);
+                    break;
+                case '*':
+                    alert(a * b);
+                    break;
+                default:
+                    alert(a / b);
+                    break;
+            }
+        }
+        function getLength(str){ // 실패
+            var len = 0;
+            for (var i in str) {
+                console.log(i);
+                len = i + 1 + len;
+            }
+            return len;
+        }
+        function showAlert(msg){
+            alert(msg);
+        }
+        function absSum(x, y){
+            var tempX = x > 0 ? x : -x;
+            var tempY = y > 0 ? y : -y;
+            return tempX + tempY;
+        }
+        // console.log(max(5, 4));
+        // console.log(printName("정호"));
+        // console.log(getArea(5));
+        // console.log(reverse(true));
+        // console.log(sum([1,2,3,4]));
+        // console.log(loopString("정호", 3));
+        // console.log(calc(5, 4, "*"));
+        console.log(getLength("agsp"));
+        // console.log(showAlert("정호"));
+        // console.log(absSum(5, -4));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

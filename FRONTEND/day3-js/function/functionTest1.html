@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //1. 선언적 함수 - 함수 이름이 있음
+        // function hello(/*params*/){
+        //     alert('hello');
+        // }
+        // hello();
+
+        //2. hoisting 예시 => 정상 출력
+        // hello();
+        // function hello(/*params*/){
+        //     alert('hello');
+        // }
+
+
+        //3. 또 다른 hoisting 예시
+        say('kim');
+        function hello(/*params*/){
+            alert('hello');
+        }
+
+        function say(name){
+            console.log('hello, ' + name);
+        }
+
+        function sum(num1, num2){
+            return num1 + num2;
+        }
+        console.log(sum(12, 34));
+        console.log(typeof sum); // function 이 출력됨.
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

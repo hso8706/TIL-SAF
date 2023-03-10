@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var color = ['red', 'pink', 'yellow', 'green', 'blue', 123]; //js 배열은 대괄호, 여러 데이터 타입 가능
+        for(var j in color){ // for ~ in: in 키워드 사용 가능, 근데 요소가 아닌 인덱스를 순회
+            document.write(color[j] + "<hr>");
+        }
+        
+        
+        for (let index = 0; index < color.length; index++) {
+            document.write(color[index] + "<hr>");
+            
+        }
+
+        for(var i = 0; i < 5; i++){
+            if(i == 3) continue;
+            document.write(i+".hello world!!!<br>") //브라우저 출력엔 태그로 줄바꿈
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

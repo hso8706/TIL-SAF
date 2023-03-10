@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/sample.js"></script> <!--외부 스크립트 가져오는 방법. 주의: 외부 스크립트를 가져오는 script 내에는 contents가 존재해서는 안된다.-->
+    <script>
+        var fa = ""; // 빈 문자열 -> 아예 없는 취급, 자바랑 다른점
+        var sol = " "; // 공백 문자열
+        if(fa) // 빈 문자열 == false
+            document.write('fa'); // browser에 출력하는 방법
+
+        if(sol)
+            document.write('sol');
+
+
+        var name = "tommy";
+        var num = 123;
+        var flag = true;
+        var point = 3.14;
+        
+        console.log(typeof name); // 브라우저의 개발자 모드에 있는 console에서 확인 가능
+        console.log(typeof num);
+        console.log(typeof flag);
+        console.log(typeof point);
+        console.log(typeof count);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

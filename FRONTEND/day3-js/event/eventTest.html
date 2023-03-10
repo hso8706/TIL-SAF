@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function handleEvent(code){
+            if(code == 1)
+                alert('mouse click!');
+            else if(code == 2)
+                alert('mouse over!');
+            else if(code == 3)
+                open("http://www.daum.net", "daum", "width=300px, height = 300px, scrollbars = 1");
+            else if(code == 4)
+                print();
+            else if(code == 5)
+                close();
+        }
+    </script>
+</head>
+<body>
+    <h1>Event Test</h1>
+    <!-- <input type="button" value="press"> -->
+    <button onclick="handleEvent(1)">mouse click</button>
+    <button onmouseover="handleEvent(2)">mouse over</button>
+    <button onclick="handleEvent(3)">open</button>
+    <button onclick="handleEvent(4)">print</button>
+    <button onclick="handleEvent(5)">close</button>
+</body>
+</html>

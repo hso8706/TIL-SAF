@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        function User(name, age){//필드 데이터만 클래스 내부에 저장
+            this.name = name;
+            this.age = age;
+        }
+
+        // 함수는 prototype 영역으로 이동
+        User.prototype.showInfo = function(){
+            document.write("name: " + this.name + ", age: " + this.age + "<br>");
+        }
+        /*
+        prototype
+        : 자바스크립의 객체에 포함되어 있는 특별한 프로퍼티
+        */
+
+        var u1 = new User("park", 25);
+        var u2 = new User("lee", 35);
+
+        u1.showInfo();
+        u2.showInfo();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
