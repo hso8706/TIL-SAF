@@ -6,37 +6,62 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Document</title>
         <!--
-        - 동의하지 않음 라디오 버튼 클릭시 alert 창 출력
-        - 웹페이지 출력 or 약관 출력
-        - 아이디 중복체크
-        - 비밀번호 6-10글자 입력안하면 alert 창 출력
+        - 동의하지 않음 라디오 버튼 클릭시 alert 창 출력~~
+        - 웹페이지 출력 or 약관 출력~~
+        - 아이디 중복체크~~
+        - 비밀번호 6-10글자 입력안하면 alert 창 출력~~
         - 주민번호 앞 6자리 입력하면 뒷자리 칸으로 자동이동
         - 주소 검색 버튼 누르면 주소 검색 창 띄우고 해당 주소 선택하면 막힌 주소 입력창 열리면서 해당 주소 입력되기?
         - 남기시는 말씀 박스 클릭하면 안에 있는 내용 전체 삭제
     -->
         <script>
             // 약관 인쇄
-            var origin = document.body.innerHTML;
             function printEvent() {
-                window.onbeforeprint = before;
+                var origin = document.body.innerHTML;
+                window.onbeforeprint = function () {
+                    var partPrint = document.getElementById("policy").innerHTML;
+                    document.body.innerHTML = partPrint;
+                };
+                window.onafterprint = function () {
+                    document.body.innerHTML = origin;
+                };
                 window.print();
-                window.onafterprint = after;
             }
-            var before = function () {
-                var partPrint = document.getElementById("policy").innerHTML;
-                document.body.innerHTML = partPrint;
-            };
-            var after = function () {
-                document.body.innerHTML = origin;
-            };
+            // 약관 동의
+            function radioCheck(){
+                alert("약관에 동의하셔야만 회원 가입을 할 수 있습니다.")
+            }
             // 주민번호
             function moveNext() {}
             // 남기실 말씀...
             function clearText() {}
-            // 비밀번호
-            function lengthCheck() {}
             // id 체크
-            function idCheck() {}
+            var isChecked = false;
+            function idCheck() {
+                isChecked = true;
+            }
+            function isCheckedForID() {
+                if(isChecked) {
+                    alert("회원가입이 완료되었습니다.")
+                    document.getElementById("userId").submit();
+                    return;
+                }
+                else {
+                    alert("아이디 중복체크를 해주시길 바랍니다.")
+                    return;
+                }
+            }
+            // 비밀번호
+            function lengthCheck() {
+                var userPwLen = document.getElementById("userPw");
+                if(userPwLen.value.length < 6 || userPwLen.value.length > 10 ){
+                    alert("비밀번호는 6자 이상, 10자 이내여야 합니다. \n\n다시 입력하여 주십시오.")
+                    userPwLen.value = null;
+                }
+                else {
+                    alert("안전한 비밀번호입니다.")
+                }
+            }
         </script>
         <style>
             #policy {
@@ -69,13 +94,13 @@
             <br />
             <input type="radio" name="agreement" checked /> 약관에 동의합니다. &nbsp;
             <!-- &nbsp; : 스페이스 -->
-            <input type="radio" name="agreement" /> 약관에 동의 하지 않습니다.
+            <input type="radio" name="agreement" onclick="radioCheck()"/> 약관에 동의 하지 않습니다.
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <input type="button" value="약관인쇄" onclick="printEvent()" /> <br /><br />
-            아이디: <input type="text" />
+            아이디: <input type="text" id = "userId"/>
             <input type="button" value="중복체크" onclick="idCheck()" /><br /><br />
             <span id="msg"></span>
-            패스워드: <input type="password" onblur="lengthCheck()" /> (최소 6글자이상 10글자 이내)
+            패스워드: <input type="password" id= "userPw" onblur="lengthCheck()" /> (최소 6글자이상 10글자 이내)
             <br /><br />
             주민번호: <input type="number" onkeyup="moveNext()" />-<input type="number" /> <br />
             주소: <input type="text" disabled />-<input type="text" disabled />
@@ -84,7 +109,7 @@
 남기실 말씀..</textarea
             >
             <br />
-            <input type="submit" value="회원가입" />
+            <input type="button" value="회원가입" onclick="isCheckedForID()"/>
             <input type="reset" value="원래대로" />
         </form>
     </body>
