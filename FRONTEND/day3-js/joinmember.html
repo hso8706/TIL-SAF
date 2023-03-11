@@ -1,49 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script>
-        // 약관 인쇄
-        var prtContent;
-        var initBody;
-        function printEvent(policy){
-            prtContent = document.getElementById(policy);
-            window.onbeforeprint = beforePrint;
-            window.onafterprint = afterPrint;
-            window.print();
-        }
-        var beforePrint = function(){
-            initBody = document.body.innerHTML;
-            document.body.innerHTML = prtContent.innerHTML;
-        }
-        var afterPrint = function(){
-            document.body.innerHTML = initBody;
-        }
-        // 주민번호
-        function moveNext(){
-
-        }
-        // 남기실 말씀...
-        function clearText(){
-
-        }
-        // 비밀번호
-        function lengthCheck(){
-
-        }
-        // id 체크
-        function idCheck(){
-            
-        }
-    </script>
-</head>
-<body>
-    <h1>회원 정보</h1>
-    <form action="welcome.html">
-        <textarea name="policy" id="policy" rows="15" cols="210" disabled>[서비스 이용약관]
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <!--
+        - 동의하지 않음 라디오 버튼 클릭시 alert 창 출력
+        - 웹페이지 출력 or 약관 출력
+        - 아이디 중복체크
+        - 비밀번호 6-10글자 입력안하면 alert 창 출력
+        - 주민번호 앞 6자리 입력하면 뒷자리 칸으로 자동이동
+        - 주소 검색 버튼 누르면 주소 검색 창 띄우고 해당 주소 선택하면 막힌 주소 입력창 열리면서 해당 주소 입력되기?
+        - 남기시는 말씀 박스 클릭하면 안에 있는 내용 전체 삭제
+    -->
+        <script>
+            // 약관 인쇄
+            var origin = document.body.innerHTML;
+            function printEvent() {
+                window.onbeforeprint = before;
+                window.print();
+                window.onafterprint = after;
+            }
+            var before = function () {
+                var partPrint = document.getElementById("policy").innerHTML;
+                document.body.innerHTML = partPrint;
+            };
+            var after = function () {
+                document.body.innerHTML = origin;
+            };
+            // 주민번호
+            function moveNext() {}
+            // 남기실 말씀...
+            function clearText() {}
+            // 비밀번호
+            function lengthCheck() {}
+            // id 체크
+            function idCheck() {}
+        </script>
+        <style>
+            #policy {
+                /*약관 박스 브라우저 크기에 맞게 설정*/
+                position: relative;
+                width: 100%;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>회원 정보</h1>
+        <form action="welcome.html">
+            <textarea name="policy" id="policy" rows="15" cols="210" disabled>
+[서비스 이용약관]
 
             제 1장 총칙
     
@@ -58,19 +65,27 @@
             4. 비밀번호 : "회원"이 부여받은 "아이디(ID)"와 일치되는 "회원"임을 확인할 목적으로, "회원" 자신이 정한 문자 또는 숫자의 조합 
             5. 게시물 : "회원"이 "서비스"를 이용하면서 "서비스" 상에 게시한 글, 사진, 동영상, 음성 및 각종 파일 및 링크 등(형태와 유형을 제한하지 않음) 
             6. 유료 서비스 : "회사"가 유료로 제공하는 각종 온라인 디지털 콘텐츠(각종 정보 콘텐츠 및 특정 "서비스"에 대한 확장·추가 기능 포함) 및 제반 서비스 
-           </textarea><br>
-        <input type="radio" name="agreement" checked> 약관에 동의합니다. &nbsp; <!-- &nbsp; : 스페이스 -->          
-        <input type="radio" name="agreement"> 약관에 동의 하지 않습니다. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <input type="button" value="약관인쇄" onclick="printEvent(policy);"> <br><br>
-        아이디:<input type="text"> 
-        <input type="button" value="중복체크" onclick="idCheck()"><br><br>
-        <span id="msg"></span>
-        패스워드: <input type="password" onblur="lengthCheck()"> (최소 6글자이상 10글자 이내) <br><br>
-        주민번호: <input type="number" onkeyup="moveNext()">-<input type="number"> <br>
-        주소: <input type="text" disabled>-<input type="text" disabled> <input type="button" value="주소찾기"> <br><br>
-        <textarea name="comment" id="comment" rows="10" cols="50" onfocus="clearText()">남기실 말씀..</textarea> <br>
-        <input type="submit" value="회원가입">
-        <input type="reset" value="원래대로">
-    </form>
-</body>
+            </textarea>
+            <br />
+            <input type="radio" name="agreement" checked /> 약관에 동의합니다. &nbsp;
+            <!-- &nbsp; : 스페이스 -->
+            <input type="radio" name="agreement" /> 약관에 동의 하지 않습니다.
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="button" value="약관인쇄" onclick="printEvent()" /> <br /><br />
+            아이디: <input type="text" />
+            <input type="button" value="중복체크" onclick="idCheck()" /><br /><br />
+            <span id="msg"></span>
+            패스워드: <input type="password" onblur="lengthCheck()" /> (최소 6글자이상 10글자 이내)
+            <br /><br />
+            주민번호: <input type="number" onkeyup="moveNext()" />-<input type="number" /> <br />
+            주소: <input type="text" disabled />-<input type="text" disabled />
+            <input type="button" value="주소찾기" /> <br /><br />
+            <textarea name="comment" id="comment" rows="10" cols="50" onfocus="clearText()">
+남기실 말씀..</textarea
+            >
+            <br />
+            <input type="submit" value="회원가입" />
+            <input type="reset" value="원래대로" />
+        </form>
+    </body>
 </html>
