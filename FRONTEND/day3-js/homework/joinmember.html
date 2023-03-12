@@ -10,10 +10,12 @@
         - 웹페이지 출력 or 약관 출력~~
         - 아이디 중복체크~~
         - 비밀번호 6-10글자 입력안하면 alert 창 출력~~
-        - 주민번호 앞 6자리 입력하면 뒷자리 칸으로 자동이동
+        - 주민번호 앞 6자리 입력하면 뒷자리 칸으로 자동이동~~
         - 주소 검색 버튼 누르면 주소 검색 창 띄우고 해당 주소 선택하면 막힌 주소 입력창 열리면서 해당 주소 입력되기?
-        - 남기시는 말씀 박스 클릭하면 안에 있는 내용 전체 삭제
-    -->
+        - 남기시는 말씀 박스 클릭하면 안에 있는 내용 전체 삭제~~
+        -->
+        <!--주소 검색-->
+        <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
         <script>
             // 약관 인쇄
             function printEvent() {
@@ -28,8 +30,8 @@
                 window.print();
             }
             // 약관 동의
-            function radioCheck(){
-                alert("약관에 동의하셔야만 회원 가입을 할 수 있습니다.")
+            function radioCheck() {
+                alert("약관에 동의하셔야만 회원 가입을 할 수 있습니다.");
             }
             // 주민번호
             function moveNext() {}
@@ -41,26 +43,48 @@
                 isChecked = true;
             }
             function isCheckedForID() {
-                if(isChecked) {
-                    alert("회원가입이 완료되었습니다.")
+                if (isChecked) {
+                    alert("회원가입이 완료되었습니다.");
                     document.getElementById("userId").submit();
                     return;
-                }
-                else {
-                    alert("아이디 중복체크를 해주시길 바랍니다.")
+                } else {
+                    alert("아이디 중복체크를 해주시길 바랍니다.");
                     return;
                 }
             }
             // 비밀번호
             function lengthCheck() {
                 var userPwLen = document.getElementById("userPw");
-                if(userPwLen.value.length < 6 || userPwLen.value.length > 10 ){
-                    alert("비밀번호는 6자 이상, 10자 이내여야 합니다. \n\n다시 입력하여 주십시오.")
+                if (userPwLen.value.length < 6 || userPwLen.value.length > 10) {
+                    alert("비밀번호는 6자 이상, 10자 이내여야 합니다. \n\n다시 입력하여 주십시오.");
                     userPwLen.value = null;
+                } else {
+                    alert("안전한 비밀번호입니다.");
                 }
-                else {
-                    alert("안전한 비밀번호입니다.")
+            }
+            // 주민 번호
+            var limit = 6;
+            function moveNext() {
+                var intArr = document.getElementById("frontNums").value;
+                if (intArr.length == limit) {
+                    document.getElementById("rearNums").focus();
+                    return;
                 }
+            }
+            // 주소 찾기
+            function findAddress() {
+                new daum.Postcode({
+                    oncomplete: function (data) {
+                        document.getElementById("zip").value = data.zonecode;
+                        document.getElementById("addr1").value = data.address;
+                        document.getElementById("addr2").value = data.buildingName;
+                    },
+                }).open();
+            }
+            // 남기실 말씀
+            function clearText() {
+                var innerTexts = document.getElementById("comment");
+                innerTexts.value = null;
             }
         </script>
         <style>
@@ -94,22 +118,34 @@
             <br />
             <input type="radio" name="agreement" checked /> 약관에 동의합니다. &nbsp;
             <!-- &nbsp; : 스페이스 -->
-            <input type="radio" name="agreement" onclick="radioCheck()"/> 약관에 동의 하지 않습니다.
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="radio" name="agreement" onclick="radioCheck()" /> 약관에 동의 하지
+            않습니다. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <input type="button" value="약관인쇄" onclick="printEvent()" /> <br /><br />
-            아이디: <input type="text" id = "userId"/>
+            아이디: <input type="text" id="userId" />
             <input type="button" value="중복체크" onclick="idCheck()" /><br /><br />
             <span id="msg"></span>
-            패스워드: <input type="password" id= "userPw" onblur="lengthCheck()" /> (최소 6글자이상 10글자 이내)
+            패스워드: <input type="password" id="userPw" onblur="lengthCheck()" /> (최소 6글자이상
+            10글자 이내) <br /><br />
+            주민번호: <input type="number" onkeyup="moveNext()" id="frontNums" />-<input
+                type="number"
+                id="rearNums"
+                onfocus="focusHere()"
+            />
             <br /><br />
-            주민번호: <input type="number" onkeyup="moveNext()" />-<input type="number" /> <br />
-            주소: <input type="text" disabled />-<input type="text" disabled />
-            <input type="button" value="주소찾기" /> <br /><br />
+            <!-- 주소: <input type="text" disabled />-<input type="text" disabled />
+            <input type="button" value="주소찾기" onclick="findAddress()" /> <br /><br /> -->
+            우편번호 : <input type="text" name="zip" id="zip" />
+            <button type="button" onclick="findAddress()">
+                검색</button
+            ><br />
+            주소 : <input type="text" name="addr1" id="addr1" readonly /><br />
+            상세 : <input type="text" name="addr2" id="addr2"/><br /><br />
+
             <textarea name="comment" id="comment" rows="10" cols="50" onfocus="clearText()">
-남기실 말씀..</textarea
-            >
+남기실 말씀..
+            </textarea>
             <br />
-            <input type="button" value="회원가입" onclick="isCheckedForID()"/>
+            <input type="button" value="회원가입" onclick="isCheckedForID()" />
             <input type="reset" value="원래대로" />
         </form>
     </body>
