@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD Xhtml 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title> </title>
+        <style>
+            body {
+                font-size: 9pt;
+            }
+            .panel {
+                width: 840px;
+                height: 415px;
+                border: 1px solid #ccc;
+            }
+
+            .nav {
+                width: 840px;
+                text-align: center;
+            }
+            button {
+                margin-top: 5px;
+                padding: 5px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="panel">
+            <img src="./carimages/1.jpg" id="view" />
+        </div>
+
+        <div class="nav">
+            <button id="play" onclick="play()">play</button>
+            <button id="stop" onclick="stop()">stop</button>
+            <button id="prev" onclick="prev()">prev</button>
+            <button id="next" onclick="next()">next</button>
+        </div>
+        <script>
+            //시간 단위로 흐르게, setInterval
+            var index = 1;
+            var srcString = "";
+            var interval;
+            var flag = false;
+            function play() {
+                if (flag == false) {
+                    flag = true;
+                    interval = setInterval(next, 100);
+                }
+            }
+            function stop() {
+                clearInterval(interval);
+            }
+            function prev() {
+                index--;
+                if (index < 1) index = 60;
+                srcString = `./carimages/${index}.jpg`;
+                var view = document.getElementById("view");
+                view.setAttribute("src", srcString);
+            }
+            function next() {
+                index++;
+                if (index > 60) {
+                    index = 1;
+                }
+                srcString = `./carimages/${index}.jpg`;
+                var view = document.getElementById("view");
+                view.setAttribute("src", srcString);
+            }
+        </script>
+    </body>
+</html>

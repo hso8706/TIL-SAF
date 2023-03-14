@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Localstorage</title>
+    <script type="text/javascript">
+      function init() {
+        // localStorage 데이터 추가 방법 3가지
+        localStorage.username = "Heritage";
+        // localStorage["username"] = "Heritage";
+        // localStorage.setItem("username", "Heritage");
+
+        //session이 끝나면 사라짐(== browser를 닫으면)
+        sessionStorage.setItem('code', 'blue');
+        //개발자 탭 - Application - SessionStorage
+      }
+    </script>
+  </head>
+  <body>
+    <body onload="init()">
+      <div id="result"></div>
+    </body>
+  </body>
+</html>

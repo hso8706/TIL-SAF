@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //리턴값으로 함수를 받는 경우
+        function outer(){
+            var x = 10;
+            var inner = function(){
+                console.log(x);
+            }
+            // inner(); //inner: function
+            return inner;
+        }
+
+        var q = outer(); // outer함수 실행, 실행 이후에는 outer의 지역 변수는 사라지는게 정상
+        q();//q()의 결과로 outer 내부 변수인 x의 값이 콘솔에 찍힘
+        // outer(); // 같은 결과 출력
+        /*
+        코드를 보면 q(); 의 결과로 x값이 콘솔에 찍힌다.
+        근데 x 변수의 스코프는 outer 함수 내로 결정되어 있다.
+        
+        이렇게 변수의 스코프 외부에서도 해당 변수 값을 사용할 수 있는 이유는,
+        outer함수의 반환값이 함수(inner)이기 때문이다.
+
+        outer보다 inner가 더 오래 지속된다.
+        */
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

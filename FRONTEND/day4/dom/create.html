@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var cnt = 0;
+        function del(that){
+            //that : <h1 onclick = 'del()'>hello dom</h1>
+            var parent = that.parentNode;// that.parentNOde == div(#result)
+            parent.removeChild(that);
+        }
+        //javascript에서 css 조정하기 => .style 키워드 접근
+        function changeColor(params){
+            var title = document.getElementById("title");
+            title.style.color = 'red';
+            title.style.fontFamily = "궁서체";
+            title.style.fontSize = "30pt";
+        }
+
+        function addNode(){
+            //<h1 onclick = 'del()'>hello dom</h1>
+            var h1 = document.createElement("h1");//<h1></h1>
+            h1.setAttribute('onclick', 'del(this)');// 자기 자신(h1)에 속성 추가, 속성: onclick: "del()"
+            var txt = document.createTextNode("hello dom" + (++cnt));//hello dom
+
+            //<a href='#'>gogo</a>
+            var a1 = document.createElement("a");
+            a1.setAttribute('href', '#');
+            var txt2 = document.createTextNode('gogo');
+            a1.appendChild(txt2);
+            document.getElementById("result").appendChild(a1);
+
+            h1.appendChild(txt); // txt -> h1 추가
+            document.getElementById("result").appendChild(h1); // h1 -> div(#result)에 추가
+        }
+    </script>
+</head>
+<body>
+    <h1 id="title">DOM TEST 입니다</h1>
+    <input type="button" value="changeColor" onclick="changeColor()">
+    <input type="button" value="add" onclick="addNode()"><hr>
+    <div id="result" style="width: 300px; height: 300px; border: 2px red solid; overflow: auto;"></div>
+</body>
+</html>

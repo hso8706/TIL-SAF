@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function startWork(){
+            var time = new Date(); //실행 시점의 날짜 정보 받아옴(년,월,일,시,분,초)
+            console.log(time);
+        }
+
+        function stopWork(){
+            clearInterval(); //setInterval()로 시작된 작업을 멈추
+        }
+
+        // setInterval(startWork, 1000); //1초 간격으로 startWork를 반복 실행하라
+        setTimeout(stopWork, 5000)
+    </script>
+</head>
+<body>
+    <h1>Set Interval Test</h1>
+    <button onclick="stopWork()">stop</button>
+</body>
+</html>

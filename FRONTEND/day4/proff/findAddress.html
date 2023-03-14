@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //사용자가 클릭한 링크 정보를 메인창에 출력하기. 자신은 닫고...
+        //that:<a href="#" id="12345서울시 영등포구" onclick="process(this)">12345 서울시 영등포구</a>
+        function process(that){
+            var value = that.id;//12345서울시 영등포구
+            var part1 = value.substring(0, 5);//우편번호
+            var part2 = value.substring(5);//주소
+
+            opener.document.getElementById('addr1').value = part1;
+            opener.document.getElementById('addr2').value = part2;
+
+            close();
+        }
+    </script>
+</head>
+<body>
+    <h1>주소 찾기</h1>
+    <a href="#" id="12345서울시 영등포구" onclick="process(this)">12345 서울시 영등포구</a><br>
+    <a href="#" id="23456서울시 종로구" onclick="process(this)">23456 서울시 종로구</a><br>
+    <a href="#" id="56778서울시 중구" onclick="process(this)">56778 서울시 중구</a><br>
+    
+</body>
+</html>

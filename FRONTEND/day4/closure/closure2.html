@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="button">toggle</button>
+    <div id="div" style="width: 100px; height: 100px; background: red;"></div>
+    <script>
+        var button = document.getElementById("button");
+        var div= document.getElementById("div");
+
+        var work = function(){
+            var isShow = true;
+
+            return function(){ //(1) closure를 리턴
+                div.style.display = isShow ? "block" : "none"; //.display : 눈에 보이게끔 하거나 안하거나
+                isShow = !isShow; //지역 변수 상태 변경
+            }
+        }();
+
+    //(2) 이벤트 핸들러에 클로저를 할당
+    button.onclick = work;
+
+    </script>
+</body>
+</html>

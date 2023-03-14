@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Localstorage</title>
+    <script>
+      //onload : 화면 로드가 다 끝나면 발생하는 이벤트
+      function init() {
+        // localStorage 데이터 취득 방법 3가지
+        var val = localStorage.username;
+        // var val = localStorage["username"];
+        // var val = localStorage.getItem("username");
+        var code = sessionStorage.getItem('code');
+        //취득 데이터 출력
+        document.querySelector("#result").innerHTML = val +"<hr>" + code;
+      }
+    </script>
+  </head>
+  <body>
+    <body onload="init()">
+      <div id="result"></div>
+    </body>
+  </body>
+</html>

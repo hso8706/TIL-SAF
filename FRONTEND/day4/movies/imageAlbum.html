@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script>
+            // 이미지 자료를 배열로 처리
+            var photos = new Array(); //빈 배열 생성
+            photos[0] = "../movies/movies/movie01.jpg"; // 배열 초기화
+            photos[1] = "../movies/movies/movie02.jpg";
+            photos[2] = "../movies/movies/movie03.jpg";
+            photos[3] = "../movies/movies/movie04.jpg";
+            photos[4] = "../movies/movies/movie05.jpg";
+            photos[5] = "../movies/movies/movie06.jpg";
+            photos[6] = "../movies/movies/movie07.jpg";
+            
+            var index = 0; // 현재 보여지는 이미지 인덱스, 함수 내에서 인덱스 컨트롤러
+            var srcString = "../movies/movies/movie01.jpg";
+            function previous() {
+                index--;//이전 인덱스 호출
+                if(index < 0) index = photos.length-1;
+                var pic = document.getElementById("pic");//#pic 호출
+                pic.setAttribute('src', photos[index]);//src 속성 값 변경
+            }
+            function next() {
+                index++;//다음 인덱스 호출
+                // srcString = `../movies/movies/movie0${index}.jpg`;//src(string) 변경
+                if(index > photos.length-1) index = 0;
+                var pic = document.getElementById("pic");//#pic 호출
+                pic.setAttribute('src', photos[index]);//src 속성 값 변경
+            }
+            function first() {
+                index = 0;//처음 인덱스 호출
+                var pic = document.getElementById("pic");//#pic 호출
+                pic.setAttribute('src', photos[index]);//src 속성 값 변경
+            }
+            function last() {
+                index = photos.length-1;//마지막 인덱스 호출
+                var pic = document.getElementById("pic");//#pic 호출
+                pic.setAttribute('src', photos[index]);//src 속성 값 변경}
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Image ALbum</h1>
+        <img id = "pic" src="../movies/movies/movie01.jpg" alt="첫번째 이미지" />
+        <hr />
+        <input type="button" value="previous" onclick="previous()" />
+        <input type="button" value="first" onclick="first()" />
+        <input type="button" value="last" onclick="last()" />
+        <input type="button" value="next" onclick="next()" />
+    </body>
+</html>
