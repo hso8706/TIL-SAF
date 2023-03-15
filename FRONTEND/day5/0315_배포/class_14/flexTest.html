@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<!-- Flex: Flexible Box, Flexbox라고도 부름.layout 전용 기능으로 사용됨.
+	1)flex container에 적용하는 속성
+	2)flex item에 적용하는 속성
+-->
+<style>
+
+.container {
+	display: flex; /*flex방식을 적용해서 배치할 것임*/
+	background: #f4ff81;
+	height: 100vh;/*vh(viewport height) device의 세로 viewport 전체 사용하겠음.*/
+
+	/* 1) item의 나열 방향. column, row */
+	flex-direction: column;
+
+	/* 2) item의 줄넘김 설정. default는 nowrap(줄바꿈 안됨)*/
+	flex-wrap: nowrap;
+
+	/* 3) item의 수평방향 정렬. flex-end, flex-start, space-between*/
+	justify-content: flex-start;
+
+	/* 4) item의 수직방향 정렬. flex-end, flex-start, center*/
+	align-items: center;
+}
+
+.item {
+	height: 120px; 	
+	width: 120px;
+	border: 1px solid black;
+
+	/* 1) 아이템의 width/height지정. flex-direction이 row이면 가로, column이면 세로가 지정*/
+	flex-basis: 150px;	
+}
+
+.item1 {
+	background: #f4ff81;
+	align-self: flex-start;	/* 2) 수직축 정렬. item수준에서 다시 지정함. */
+}
+
+.item2 {
+	background: #ffc400;
+	align-self: flex-end;
+}
+
+.item3 {
+	background: #ff8f00;
+	
+}
+
+.item4 {
+	background: #b2ff59;
+}
+
+.item5 {
+	background: #00b8d4;
+}
+
+.item6 {
+	background: #2962ff;
+}
+
+.item7 {
+	background: #7c4dff;
+}
+
+.item8 {
+	background: #c2185b;
+}
+
+.item9 {
+	background: #01579b;
+}
+
+.item10 {
+	background: #ea80fc;
+}
+</style>
+</head>
+<body>	
+	<div class="container">
+		<div class="item item1">1</div>
+		<div class="item item2">2</div>
+		<div class="item item3">3</div>
+		<div class="item item4">4</div>
+		<div class="item item5">5</div>
+		<div class="item item6">6</div>
+		<div class="item item7">7</div>
+		<div class="item item8">8</div>
+		<div class="item item9">9</div>	
+	</div>	
+</body>
+</html>

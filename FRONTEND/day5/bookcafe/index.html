@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SSAFY BOOK CAFE</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+  </head>
+  <body>
+    <!-- 상단 navbar start -->
+    <nav class="navbar navbar-expand-lg bg-light shadow fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand link-primary fw-bold fs-1" href="#">
+          <img src="./assets/img/ssafy_logo.png" alt="">
+          SSAFY BOOK CAFE
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">공지사항</a>
+            </li>
+          </ul>
+
+
+          <!-- 로그인 전 -->
+          <ul class="navbar-nav mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">로그인</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">회원가입</a>
+            </li>
+          </ul>
+
+          <!-- 로그인 후 -->
+          <ul class="navbar-nav mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">로그아웃</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">마이페이지</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                관리자
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item"  data-bs-toggle="modal" data-bs-target="#pollModal" href="#">투표 만들기</a></li>
+                <li><a class="dropdown-item" href="#">회원 정보 보기</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+
+    <!-- 상단 navbar end -->
+
+    <!-- 중앙 content start -->
+    <div class="container">
+      <div style="height: 120px;"></div>
+      <div class="row">
+    <!-- 중앙 left content start -->
+          <div class="col-md-3">
+            <div class="text-center">
+              <img src="./assets/img/profile.png" class="rounded img-thumbnail" alt="프로필 사진">
+            </div>
+            <div class="accordion mt-3" id="area">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="seoul">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#area-seoul" aria-expanded="true" aria-controls="collapseOne">
+                    서울
+                  </button>
+                </h2>
+                <div id="area-seoul" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                  <div class="accordion-body"> 역삼점 </div>
+                  <div class="accordion-body"> 선릉점 </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="daejoen">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#area-daejoen" aria-expanded="true" aria-controls="collapseOne">
+                    대전
+                  </button>
+                </h2>
+                <div id="area-daejoen" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                  <div class="accordion-body"> 대전1점 </div>
+                  <div class="accordion-body"> 대전2점 </div>
+                </div>
+              </div>
+              <!-- 메뉴 end -->
+
+              <div class="border border-danger unded-3 mt-3 p-5 text-center">투표영역</div>
+              <!-- </div> -->
+            </div>
+          </div>
+    <!-- 중앙 left content end -->
+
+    <!-- 중앙 center content start -->
+          <div class="col-md-9">
+            <div class="row mt-2"><h4>[ 프로그래밍 언어 ]</h4></div>
+            <div class="row">
+              <div class="card col-lg-3 col-md-6 col-sm-12">
+                <img src="./assets/img/book/p_book01.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">점프 투 파이썬</h5>
+                  <p class="card-text">18000원</p>
+                  <a href="#" class="btn btn-primary">구매하기</a>
+                </div>
+              </div>
+
+              <div class="card col-lg-3 col-md-6 col-sm-12">
+                <img src="./assets/img/book/p_book02.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">점프 투 파이썬</h5>
+                  <p class="card-text">18000원</p>
+                  <a href="#" class="btn btn-primary">구매하기</a>
+                </div>
+              </div>
+
+              <div class="card col-lg-3 col-md-6 col-sm-12">
+                <img src="./assets/img/book/p_book03.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">점프 투 파이썬</h5>
+                  <p class="card-text">18000원</p>
+                  <a href="#" class="btn btn-primary">구매하기</a>
+                </div>
+              </div>
+
+              <div class="card  col-lg-3 col-md-6 col-sm-12">
+                <img src="./assets/img/book/p_book04.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">점프 투 파이썬</h5>
+                  <p class="card-text">18000원</p>
+                  <a href="#" class="btn btn-primary">구매하기</a>
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+    <!-- 중앙 center content end -->
+
+
+      </div>
+    </div>
+    <!-- 중앙 content end -->
+
+    <!-- 하단 footer start -->
+
+    <!-- 하단 footet end -->
+
+    <!-- 설문조사 modal start -->
+    <div
+      class="modal fade"
+      id="pollModal"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+      tabindex="-1"
+      aria-labelledby="staticBackdropLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+
+          <div class="modal-header">
+            <h4 class="modal-title">
+              <i class="bi bi-chat-left-dots-fill text-info"> 설문조사 만들기</i>
+            </h4>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+
+          <div class="modal-body">
+            <form action="">
+              <div class="row mb-3 mt-3">
+                <div class="col-md-6">
+                  <i class="bi bi-calendar2-date text-primary"></i>
+                  <label for="start-date" class="form-label">시작일:</label>
+                  <input type="date" class="form-control" id="start-date" name="start-date" />
+                </div>
+                <div class="col-md-6">
+                  <i class="bi bi-calendar2-date text-danger"></i>
+                  <label for="end-date" class="form-label">종료일:</label>
+                  <input type="date" class="form-control" id="end-date" name="end-date" />
+                </div>
+              </div>
+              <div class="mb-3">
+                <i class="bi bi-patch-question" style="color: rgb(121, 2, 119)"></i>
+                <label for="question" class="form-label">질문제목:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="question"
+                  placeholder="질문제목 입력..."
+                  name="question"
+                />
+              </div>
+              <div class="mb-3">
+                <i class="bi bi-x-octagon-fill"></i>
+                <label for="question" class="form-label">답변항목:</label>
+                <button type="button" id="btn-answer-add" class="btn btn-outline-primary btn-sm">
+                  <i class="bi bi-plus-square-fill"></i> 추가
+                </button>
+              </div>
+              <div id="poll-answer-list" class="row mb-3">
+                <div class="row mb-1 poll-answer-list-item">
+                  <div class="col-md-10">
+                    <input type="text" class="form-control" name="answer" />
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" id="btn-poll-create" class="btn btn-primary btn-sm">
+              투표생성
+            </button>
+            <button type="button" class="btn btn-outline-danger btn-sm" data-bs-dismiss="modal">
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 설문조사 modal end -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+
+    
+  </body>
+</html>
