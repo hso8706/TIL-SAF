@@ -1,17 +1,17 @@
 # Front 과목평가 대비
 
-## 주요 태그와 속성들의 사용
-## CSS 선택자
-## CSS 박스 속성
-## 부트스트랩 그리드 방식 이해
-## CSS position, display의 이해
-## Ajax 통신 특징
-## JSON 사용, fetch()
-## 자바스크립트의 엘리먼트 접근, 이벤트 핸들링
-## 자바스크립트의 연산자, 자료형
-## 호이스팅
-## localStorage, sessionStorage 특징
-## 파라미터 전송 방식 및 비동기 통신 데이터의 형식들에 대한 이해
+- 주요 태그와 속성들의 사용
+- CSS 선택자
+- CSS 박스 속성
+- 부트스트랩 그리드 방식 이해
+- CSS position, display의 이해
+- Ajax 통신 특징
+- JSON 사용, fetch()
+- 자바스크립트의 엘리먼트 접근, 이벤트 핸들링
+- 자바스크립트의 연산자, 자료형
+- 호이스팅
+- localStorage, sessionStorage 특징
+- 파라미터 전송 방식 및 비동기 통신 데이터의 형식들에 대한 이해
 
 ### 속성 선택자
 - 특정한 값으로 시작하거나, 포함된 속성값을 지닌 엘리먼트를 호출하는 선택자
@@ -131,5 +131,113 @@
   - `<span>,<a>,<br>,<em>,<strong>,<input>,<label>,<img>`
 
 ### event 처리 종류 3가지
-- 태그 내부에 처리할 이벤트를 속성으로 붙임
-- 
+- 이벤트 핸들러(이벤트 리스너)
+  - : 이벤트를 감지하고 대응하여 처리하는 작업을 등록하는 것을 의미
+- 1. 인라인 이벤트 핸들러
+  - : HTML 요소 내부에 직접 이벤트 핸들러 등록
+  - : onclick, mouseover 따위의 속성을 직접 HTML 요소에 붙이던 것
+- 2. 이벤트 핸들러 프로퍼티 방식
+  - : 자바스크립트 코드 내부에서 이벤트 대상이 되는 특정 DOM을 선택하고, 거기에 이벤트 핸들러를 등록하는 방식
+  - 예시. document.getElementById("event1").onclick = function(){};
+  - : 특정 프로퍼티에 여러 이벤트 핸들러를 덧붙일 수 없음. 즉, 마지막에 바인딩된 이벤트 핸들러만 적용(코드 순)
+- 3. addEventListener 메소드 방식
+  - : 3개의 전달 인자로 세밀한 이벤트 제어가 가능
+    - 인자 1: 이벤트 이름(전치사 제거)
+    - 인자 2: 이벤트 핸들러
+    - 인자 3: 캡쳐링, 버블링 여부(optional, true==캡처링, false==버블링)
+  - : 하나의 이벤트에 하나 이상의 이벤트 핸들러를 중복하여 사용할 수 있음.
+  - : 캡처링 지원(부모 HTML 요소부터 이벤트 근원지인 자식요소까지 검사)
+  - : 버블링 지원(이벤트 발생 요소부터 부모 요소까지 올라가며 검사)
+
+### change event
+- `<select>`박스, type = check, type = radio에 주로 쓰임
+- 사용자가 해당 체크 공간의 상태를 변경할 시 발생하는 이벤트
+
+### local storage, session storage
+- web storage
+  - `key`, `value`의 쌍으로 데이터를 저장
+  - `local storage`와 `session storage`가 있음
+  - 값은 `문자열`로 저장되며, 도메인과 브라우저 별로 저장됨.
+- local storage
+  - 사용자 로컬에 데이터를 저장하는 방식
+  - 자바스크립트로만 조작
+  - 영구적인 데이터 저장(컴퓨터를 껐다 켠들 브라우저에 남아있음)
+  - 도메인만 같으면 전역적으로 공유 가능함
+  - 문자열의 데이터만 저장할 수 있기 때문에 직렬화(.stringify())필수
+- session storage
+  - 현재 떠있는 탭의 세션에서만 유지되는 데이터 저장 방식(같은 세션에서만 사용 가능)
+  - 새로고침에는 데이터가 유지되지만, 탭을 종료하면 사라짐
+  - 같은 사이트, 같은 도메인이라도 브라우저(탭)이 다르면 다른 영역(세션)으로 인식
+
+### 직렬화, 역직렬화
+- 데이터 객체와 문자열을 서로 변경하는 과정을 의미함.
+- 직렬화는 객체를 문자열로, 역직렬화는 문자열을 객체로 변경하는 것
+- 예시
+```javascript
+  let user = {
+      name: "길동맨",
+      job: "의적"
+  };
+  let userinfo = JSON.stringify(user);
+  console.log(userinfo); // {"name":"길동맨","job":"의적"}
+  console.log(typeof userinfo); // string
+  let backToUser = JSON.parse(userinfo);
+  console.log(backToUser); // {name: '길동맨', job: '의적'}
+  console.log(typeof backToUser); // object
+```
+
+### Window 객체
+- 의미 및 특징
+  - javascript의 최상의 전역 객체
+  - BOM(Browser Object Model)이라고도 함
+  - window 객체를 호출하는 것은 브라우저에서 제공하는 창을 호출하는 것이다. (현재 기준(?))
+- window 객체 메서드
+  - window.는 생략하기도함
+  - window.alert() : 브라우저의 알림창
+  - window.confirm() : 브라우저의 확인/취소 선택 창
+  - window.prompt() : 브라우저의 입력창
+  - window.open() : 새 창 열기
+  - window.close() : 현재 창 닫기
+  - 이거말고도 엄청 많음. 다른거 나오면 틀림
+- opener 객체
+  - 새 창을 연 창, 즉 부모 창을 컨트롤하기 위한 객체
+- navigator 객체
+  - 브라우저 정보가 내장된 객체로, 브라우저를 구분하여 개별 작업을 위해 사용
+
+### fetch() 함수
+- fetch()
+  - http 요청과 응답을 처리하는데 쓰이는 함수
+  - 브라우저가 제공
+- fetch(1, [2]);
+  - 1: url 형식의 인자 제공
+  - 2: get 혹은 post 선택, optiona이므로 default는 get 방식이다.
+  - 반환 타입 : Promise 타입 
+    - Promise.text() : 응답의 text를 반환
+    - Promise.json() : 응답을 JSON으로 반환
+    - Promise.formData() : 응답을 FormData로 반환
+    - Promise.blob() : 응답을 BLOB 형태로 반환
+- then()
+  - fetch() 메서드에 체인 형식으로 붙여 사용하는 메서드로, fetch()가 성공적으로 Promise 반환값을 반환했을때 실행되는 메서드
+- get, post
+  - get : 200 ok
+  - post : 201 creat
+
+### bootstrap 기본 특징
+- bootstrap을 사용하면 기본적으로 하나의 row를 12개의 col으로 나누어 사용한다.
+
+### AJAX 통신
+- AJAX
+  - XMLHttpRequest(XHR) 객체로 데이터를 서버에 전달하고 비동기 방식으로 결과를 조회하는 구현 방식
+- 일반 요청 응답과 Ajax 요청 응답
+  - 일반 요청 응답
+    1. data 입력 후 이벤트 발생
+    2. 서버로 data 전달
+    3. 내부 logic으로 data 처리
+    4. data 처리 결과 응답 페이지를 생성
+    5. client로 전달 
+  - Ajax 요청 응답
+    1. data 입력 후 이벤트 발생
+    2. 서버로 data 전달
+    3. 내부 logic으로 data 처리
+    4. data 처리 결과를 Text, XML, JSON으로 응답
+    5. 응답 데이터를 이용하여 필요한 부분만 동적으로 화면 재구성
