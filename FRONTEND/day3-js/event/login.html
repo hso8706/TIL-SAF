@@ -36,14 +36,13 @@
   <body>
     <!-- form: 사용자가 입력한 값을 서버로 전송할 때 사용하는 태그 -->
     <h1>Form Test</h1>
-    <form action="welcome.jsp">
+    <form action="/backend/LoginCheck" id="f">
       <fieldset> <!-- 하나의 집합으로 묶어주는 선 태그-->
         <legend>로그인</legend> <!-- 필드셋의 이름이 되는 부분 -->
         USER NAME: <input type="text" name="name" id="id"/><br /> <!--name 선언은 welcome.jsp로 보낼 때 구분하기 위한 용도-->
         USER PASSWORD: <input type="password" name="pass" id="pass"/><br /><!--id 선언은 js 내에서 구분하고 접근하기 위한 용도-->
-        
         <input type="reset" value="취소" />
-        <input type="button" value="로그인" onclick="loginCheck()"/> <!--기존에 있던 submit은 validation 불가-->
+        <input type="submit" value="로그인"/> <!--기존에 있던 submit은 validation 불가-->
       </fieldset>
     </form>
   </body>

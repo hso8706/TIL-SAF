@@ -1,0 +1,83 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>name length test</title>
+    <style type="text/css">
+        div {
+            display: inline-block;
+            overflow: auto;
+            border-style: solid;
+            border-width: 2px;
+            width: 200px;
+            height: 200px;
+
+        }
+
+        .red {
+            border-color: red;
+        }
+
+        .blue {
+            border-color: blue;
+        }
+    </style>
+    <script type="text/javascript">
+        var xhr = null;
+        let name = document.getElementById("name");
+        function getXHR(){
+            xhr = new XMLHttpRequest();
+        }
+
+        function checkData(){
+            name = document.getElementById("name"); //이렇게만 받으면 태그까지 다 받는거임
+            var param = `name=${name.value}`;
+
+            getXHR();
+
+            xhr.open('post', 'nameLengthCheck.jsp', true);
+            xhr.onreadystatechange = callback;
+
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;charset=utf-8");
+            xhr.send(param);
+
+        }
+
+        function callback(){
+            if(xhr.readyState == 4 && xhr.status == 200){
+                var result = xhr.responseText.trim();
+
+                if(result === "true"){
+                    console.log(result);
+                    var longNames = document.getElementById("longNames");
+                    longNames.innerHTML += name.value + "<br>";
+                }
+                else{
+
+                    console.log(result);
+                    var shortNames = document.getElementById("shortNames");
+                    shortNames.innerHTML += name.value + "<br>";
+                }
+                name.value = "";
+            }
+            else{
+                // 로딩
+            }
+        }
+    </script>
+</head>
+<body>
+<p>Please introduce yourself by entering your name in the box below</p>
+<input type='text' size='24' id='name'></input>&nbsp;
+<button id='helloBtn' onclick="checkData()">Submit</button>
+<hr>
+<div id='shortNames' class="red">
+    <br>
+
+</div>
+
+<div id='longNames' class="blue">
+    <br>
+
+</div>
+</body>
+</html>

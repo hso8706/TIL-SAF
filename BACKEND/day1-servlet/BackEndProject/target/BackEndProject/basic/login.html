@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  <script>
+    function loginCheck(){
+      //id, pass칸이 비었는지 체크
+      //비었으면 => alert("입력해 주세요")
+      //값이 다 있으면 => 서버로 전송
+
+      //1. 사용자가 입력한 id, pass칸의 글자를 알아내기
+      var userId = document.getElementById("id"); //document => 현재 작성중인 html 문서
+      var useridValue = userId.value; // 사용자가 입력한 값ㅏ
+      if(useridValue == ""){
+        alert('id를 입력해주새요')
+        return;
+      }
+      var userpwValue = document.getElementBypwuserpwValue("pwuserpwValue"); //document => 현재 작성중인 html 문서
+      var userpwValueValue = userpwValue.value; // 사용자가 입력한 값ㅏ
+      if(userpwValue == 0){
+        alert('id를 입력해주새요')
+        return;
+      }
+
+      //2. 서버로 폼 전송
+      var form = document.getElementById("f");
+      form.acton = 'welcome.html';
+      form.sumbit();
+    }
+  </script>
+  </head>
+
+  <body>
+    <!-- form: 사용자가 입력한 값을 서버로 전송할 때 사용하는 태그 -->
+    <h1>Form Test</h1>
+    <form action="/backend/LoginCheck" method="post" id="f">
+      <fieldset> <!-- 하나의 집합으로 묶어주는 선 태그-->
+        <legend>로그인</legend> <!-- 필드셋의 이름이 되는 부분 -->
+        USER NAME: <input type="text" name="id" id="id"/><br /> <!--name 선언은 welcome.jsp로 보낼 때 구분하기 위한 용도-->
+        USER PASSWORD: <input type="password" name="pass" id="pass"/><br /><!--id 선언은 js 내에서 구분하고 접근하기 위한 용도-->
+        <input type="reset" value="취소" />
+        <input type="submit" value="로그인"/> <!--기존에 있던 submit은 validation 불가-->
+      </fieldset>
+    </form>
+  </body>
+</html>

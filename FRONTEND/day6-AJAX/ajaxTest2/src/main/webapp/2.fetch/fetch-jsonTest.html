@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="EUC-KR">
+    <title>Insert title here</title>
+    <style type="text/css">
+        div {
+            /* border: 1px solid red;
+            overflow: auto;
+            display:none; */
+        }
+
+
+    </style>
+    <!--
+    단순히 특정 API에 저장된 데이터를 보여주는 웹페이지나 애플리케이션에서는 GET 방식의 HTTP 통신으로 충분할 것입니다
+
+     -->
+    <script type="text/javascript">
+        //jsonarray.jsp에 요청
+        function getData1(){
+            fetch('jsonarray.jsp')
+                .then(response => response.json()) // 성공적으로 받은 응답을 json 형식으로 변경(객체로 변경했다는 의미)
+                .then(data => callback1(data)) // json 형식으로 변경된 data를 callback1 함수에 제공
+        }
+
+        function callback1(json){
+            var result = document.getElementById("result1"); //제공받은 json이 배열 형식의 데이터임
+            for (var i = 0; i < json.length; i++) {
+                result.innerHTML += json[i] + "<br>"
+            }
+        }
+
+        function getData2(){
+            var key = document.getElementById("code2");//사용자가 입력한 코드값 호출
+            fetch('jsoncollection.jsp')
+                .then(response => response.json())
+                .then(data => callback2(data, key));
+        }
+
+        function callback2(json, code){
+            var result = document.getElementById("result2");
+
+            // json.code; //이건 불가능. 이렇게하면 json에서 `code`라는 키 값으로 찾게됨
+            var value = json[code.value]; // 전체 json 데이터에서 주어진 code(key)값에 해당하는 value 호출
+            if(value != null){
+                result.innerHTML = value;
+            }
+            else{
+                result.innerHTML = "찾는 데이터가 없습니다!";
+            }
+            code.value = '';
+        }
+
+        function getData3(){
+            var key = document.getElementById("code3");
+            fetch("jsoncollection2.jsp")
+                .then(response => response.json())
+                .then(data => callback3(data, key));
+        }
+
+        function callback3(json, code){
+            var result = document.getElementById("result3");
+            var value = json[code.value];
+            if(value != null){
+                result.innerHTML = value.name + "<br>" + value.address + "<br>" + value.tel;
+            }
+            else{
+                result.innerHTML = "찾는 데이터가 없습니다.";
+            }
+            code.value = '';
+        }
+
+    </script>
+</head>
+<body>
+<h1>json array data-1</h1>
+<input type="button" value="array data" onclick="getData1()">
+<br>
+<div id="result1"></div>
+
+<hr>
+<h1>json collection data-2</h1>
+code: <input type="text" id="code2">
+<input type="button" value="collection data" onclick="getData2()">
+<br>
+<div id="result2"></div>
+
+<hr>
+<h1>json collection data-3</h1>
+code: <input type="text" id="code3">
+<input type="button" value="collection data" onclick="getData3()">
+<br>
+<div id="result3"></div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

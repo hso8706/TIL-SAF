@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        // fetch() 사용 예시 => users(전체 유저)의 정보 호출
+        // fetch("https://reqres.in/api/users") //1번 인자: url, 2번 인자: options, 기본값 get
+        //     // .then(function (response) {return response.json()})//성공한 경우; readyStatus==4이면서code==200인 경우, 내부에는 callback 함수 제공
+        //     .then(response => response.json()) //위 주석과 같은 코드, 서버가 보내준 응답 내용을 json 형식으로 바꿈
+        //     // .then(function (data){console.log(data)}) //parameter: 1개, 실행문: 1줄
+        //     .then(data => console.log(data))
+        //     // .catch(function (err){console.log(err)})//요청이 실패한 경우
+        //     .catch(err => console.log(err))
+
+        // fetch() 사용 예시 => user(전체 유저) 중 특정 유저 정보 호출(1번 유저)
+        console.log(fetch("https://reqres.in/api/users/1")); // 반환되는 Promise 객체 확인
+        // fetch("https://reqres.in/api/users/1")
+        //     .then(res => res.json())
+        //     .then(data => console.log(data));
+    </script>
+</body>
+</html>
