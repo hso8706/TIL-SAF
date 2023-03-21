@@ -13,6 +13,9 @@
 <body>
 <h1>Login Check</h1>
 <%
+    //클라이언트에서 들어오는 데이터 전처리
+    request.setCharacterEncoding("utf-8");
+
     String id = request.getParameter("id");
     String pass = request.getParameter("pass");
 %>
