@@ -5,7 +5,7 @@
   Time: 오후 2:55
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" errorPage="errorPage.jsp" %>
 <html>
 <head>
     <title>Title</title>
@@ -18,8 +18,10 @@
 
     String id = request.getParameter("id");
     String pass = request.getParameter("pass");
+
+    int pass2 = Integer.parseInt(pass);
 %>
 <h1>Welcome, <%= id %>!!!</h1>
-your password is...<%= pass %>
+your password is...<%= ++pass2 %>
 </body>
 </html>
