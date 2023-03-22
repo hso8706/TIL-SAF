@@ -1,4 +1,4 @@
-package com.util;
+package com.mvc.util;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -9,7 +9,7 @@ public class DBUtil {
 	String driver = "com.mysql.cj.jdbc.Driver";		
 	String url = "jdbc:mysql://localhost:3306/scottdb?characterEncoding=UTF-8&serverTimezone=UTC";		
 	String user = "scott";
-	String password = "tiger";	
+	String password = "tigertiger";
 
 	private static DBUtil instance = new DBUtil();
 

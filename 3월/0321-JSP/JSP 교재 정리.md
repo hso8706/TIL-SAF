@@ -78,3 +78,41 @@
 3. session : 세션
 4. application : 프로그램 전체
 - 자세한 건 검색 및 표 참고
+
+## MVC
+### MVC Design Pattern
+- 기능별로 쪼개는 패턴, 분업
+- MVC
+  - Model : 비즈니스 로직, 데이터 담당
+  - View : 출력값(GUI, Design, Presentation) 담당
+  - Controller : View-Model 사이의 상호동작 관리 담당
+
+### MVC Design Pattern 목적
+- 비즈니스 로직과 디자인의 분리
+- 비즈니스 로직의 재사용: 디자인의 변경에 영향을 받지 않음
+- 서블릿/.jsp 에서 비즈니스 로직 분리가 필요(유지보수, 확장)
+
+### MVC Design Pattern 구조
+![MVCPattern](https://user-images.githubusercontent.com/103169947/226819073-71a4d739-fa85-40c4-bcd3-7db51df11a87.PNG)
+![MVCPattern2](https://user-images.githubusercontent.com/103169947/226819565-44231c4a-5245-480b-a61f-81b49015bb5d.PNG)
+
+### 두 개의 Controller 사용 예정
+- MVC pattern 흐름
+  - Front Controller(Servlet)
+    - Client(web)의 요청 수집, request가 가장 먼저 도달하는 지점
+    - request 분류 : 해당 request가 무엇을 요구하는지 파악
+    - Controller에 전달(== Controller 메소드 호출)
+  - Controller(JAVA)
+    - Service에 전달(== Servcie 메소드 호출)
+    - 처리가 끝난 작업물을 View에 전달
+  - Service(JAVA)
+    - 실제로 일하는 부분, 하지만 DB관련 작업은 DAO가 함(DAO에 전달)
+    - 끝난 작업은 다시 Controller에게 전달
+  - DAO(JAVA)
+    - DB관련된 작업을 처리하는 부분
+  - VO()
+  - DB
+  - View(JSP)
+    - Controller에 전달받은 작업물을 바탕으로 view 화면을 구성한다.
+- 내부에선 forward 방식으로 정보 전달
+- 싱글톤 패턴 사용
