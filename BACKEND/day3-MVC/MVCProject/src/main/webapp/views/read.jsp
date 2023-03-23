@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
-	pageEncoding="utf-8"%>
+	pageEncoding="utf-8" isELIgnored="false"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <html>
 <head>
@@ -18,39 +19,38 @@
 <body>
 	<div class="container text-center">
 	<img src="image/f2.jpg"/>
-		<h1>글읽기</h1>		
+		<h1>글읽기</h1>
 		<p>
-			
 			<table class="table table-bordered"><TR>
+
 				<TH>NUM</TH>
-				<TD>999</TD>
-				
+				<TD>${b.num}</TD>
+
 				<Th>NAME</TH>
-				<TD>999</TD>
+				<TD>${b.name}</TD>
 			</TR>
 			<TR>
 				<TH>DATE</TH>
-				<TD>999</TD>
-				
+				<TD>${b.wdate}</TD>
+
 				<TH>COUNT</TH>
-				<TD>999</TD>
+				<TD>${b.count}</TD>
 			</TR>
 			<TR>
 				<TH>TITLE</TH>
-				<TD COLSPAN=3>999</TD>
+				<TD COLSPAN=3>${b.title}</TD>
 			</TR>
 			<TR>
 				<TH>CONTENT</TH>
 				<TD COLSPAN=3>
-				<textarea readonly class="form-control" rows="5" id="comment" name="comment">			
-				999
+				<textarea readonly class="form-control" rows="5" id="comment" name="comment">
+					${b.content}
 				</textarea>
 			</td>
-			</div>
 			</TR>
 		</TABLE>
-	 <a href="list.bod">글목록</a>	 
-	  
+	 <a href="list">글목록</a>
+
 	<br><br>
 
 	</div>

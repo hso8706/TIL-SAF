@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="utf-8"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+	pageEncoding="utf-8" isELIgnored="false" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 <head>
@@ -18,8 +18,8 @@
 <body>
 	<div class="container text-center">
 		<img src="image/f1.jpg" />
-		<h1>JSP 게시판</h1>
-
+		<h1>MVC 게시판</h1>
+		<jsp:include page="loginCheck.jsp"/>
 		<table class="table table-striped">
 			<thead>
 				<tr>
@@ -31,10 +31,19 @@
 				</tr>
 			</thead>
 			<tbody>
-
+				<c:forEach items="${list}" var="b">
+					<tr>
+						<td>${b.num}</td>
+						<td><a href="read?num=${b.num}">${b.title}</a></td>
+						<td>${b.name}</td>
+						<td>${b.wdate}</td>
+						<td>${b.count}</td>
+					</tr>
+				</c:forEach>
 			</tbody>
 		</table>
 		<br>
+		<a href="insertForm">새 글 쓰기</a>
 		<br>
 	</div>
 </body>
