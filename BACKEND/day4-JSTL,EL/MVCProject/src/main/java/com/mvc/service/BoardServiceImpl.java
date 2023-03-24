@@ -16,12 +16,12 @@ public class BoardServiceImpl implements BoardService {
     }
 
     public ArrayList<Board> selectAll() {
-        return dao.selectAll();
+        return dao.selectAll(); // 만들어진 ArrayList<Board>를 Controller 로 반환
     }
 
     public Board selectOne(String num) {
-        dao.countUp(num);
-        return dao.selectOne(num);
+        dao.countUp(num); // 값을 읽기 전에 조회수 카운트업
+        return dao.selectOne(num); // 값을 읽음
     }
 
     public int insert(Board b) {

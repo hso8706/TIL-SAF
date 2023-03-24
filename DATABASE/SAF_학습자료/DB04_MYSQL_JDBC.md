@@ -33,6 +33,7 @@
           : 쿼리 문장 한개를 담을 수 있는 그릇
           : 재활용 가능
     - PreparedStatement
+      - 동일한 sql 문장이 여러 번 반복적으로 수행될 때 사용하는 객체
 4. SQL 실행 : Query를 Statement에 담아서 DB로 보냄
     - stat.executeQuery(`query`);  
       : 인자(`query`)가 `select`인 경우  

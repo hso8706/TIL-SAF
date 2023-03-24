@@ -24,7 +24,7 @@
 			<table class="table table-bordered"><TR>
 
 				<TH>NUM</TH>
-				<TD>${b.num}</TD>
+				<TD>${b.num}</TD> <!--BoardController에서 b라는 이름으로 requset에 담아 보낸 값-->
 
 				<Th>NAME</TH>
 				<TD>${b.name}</TD>

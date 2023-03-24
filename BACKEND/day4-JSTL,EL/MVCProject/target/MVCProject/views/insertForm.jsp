@@ -19,10 +19,10 @@
 	<div class="container text-center">
 		<img src="image/f2.jpg" />
 		<h1>새글쓰기</h1>
-		<form action="insertProcess" method="post">
+		<form action="insertProcess" method="post"> <!--/insertProcess servlet으로 정보를 전달-->
 			<div class="form-group text-left">
 				<label for="title">제 목:</label>
-				<input type="text"	class="form-control" name="title">
+				<input type="text"	class="form-control" name="title"> <!--name 속성값을 기준으로 데이터 전달-->
 			</div>
 
 			<div class="form-group text-left">

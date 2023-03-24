@@ -36,21 +36,21 @@ public class BoardFrontController extends HttpServlet {
 
         String reqString = request.getServletPath(); //client 가 보낸 url 구분하는 문자열
 //        System.out.println(reqString); // 마지막 `/`부터 .mvc 까지의 경로 값
-        if (reqString.equals("/list")) { // list 기능 : 첫 메인 페이지(/list) 오픈
+        if (reqString.equals("/list")) { // list 기능 : 첫 메인 페이지(list.jsp) 오픈
             con.list(request, response);
-        } else if (reqString.equals("/read")) { //
-            con.read(request, response);
-        } else if (reqString.equals("/insertForm")) {
+        } else if (reqString.equals("/read")) { // read 기능 : list 에서 각각의 세부 항목의 정보를 파악하는 기능(view: read.jsp)
+            con.read(request, response); // list.jsp 에서부터 `/read?num= `으로 전달
+        } else if (reqString.equals("/insertForm")) { // insertForm 기능 : 목록에 데이터를 넣는 view로 화면 전환하는 기능(view: insertFrom.jsp)
             con.insertForm(request, response);
-        } else if (reqString.equals("/insertProcess")) {
+        } else if (reqString.equals("/insertProcess")) { //insertProcess : 목록에 데이터를 넣을 수 있는 기능
             con.insertProcess(request, response);
-        } else if (reqString.equals("/delete")) {
+        } else if (reqString.equals("/delete")) { // delete 기능 : 목록의 데이터를 삭제하는 기능
             con.delete(request, response);
-        } else if (reqString.equals("/loginForm")) { // 로그인 화면
+        } else if (reqString.equals("/loginForm")) { // 로그인 화면 전환 기능, user 정보가 있는지 없는지 유무에 따라 `로그인`, `로그아웃`버튼이 존재
             ucon.loginForm(request, response);
-        } else if (reqString.equals("/logout")) { // 로그아웃
+        } else if (reqString.equals("/logout")) { // 로그아웃 기능
             ucon.logout(request, response);
-        } else if (reqString.equals("/loginProcess")) { // 로그인 처리(db 체크,
+        } else if (reqString.equals("/loginProcess")) { // 로그인 처리
             ucon.loginProcess(request, response);
         }
 
