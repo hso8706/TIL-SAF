@@ -10,4 +10,6 @@ public interface BoardService {
     Board selectOne(String num);
 
     int insert(Board board);
+
+    int delete(String num);
 }

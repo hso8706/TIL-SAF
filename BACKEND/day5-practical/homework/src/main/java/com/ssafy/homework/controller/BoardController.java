@@ -28,7 +28,7 @@ public class BoardController {
 
     public void read(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String num = request.getParameter("num");
-        Board board = service.selectOne(num);
+        Board board = service.selectOne(num); // service.selectOne 실행 시 조회 수 count 동시 실행
         request.setAttribute("board", board);
 
         RequestDispatcher dispatcher = request.getRequestDispatcher("/views/read.jsp");
@@ -51,6 +51,13 @@ public class BoardController {
 
         int check = service.insert(board);
 
-        response.sendRedirect("/homework/home");
+        response.sendRedirect("home");
+    }
+
+    public void delete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String num = request.getParameter("num");
+        int check = service.delete(num);
+
+        response.sendRedirect("home");
     }
 }

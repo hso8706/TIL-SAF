@@ -21,7 +21,7 @@
     <img src="image/f3.jpg" class="rounded-circle"/>
     <h1>Login</h1>
     <form method="post" action="loginProcess"> <!--/loginProcess servlet으로 form 정보 전달-->
-        <c:if test="${remem }">${msg}</c:if>
+        <c:if test="${!empty msg}">${msg}</c:if>
         <div class="form-group text-left">
             <label for="id">ID:</label>
             <input type="text" class="form-control" name="id" value="${cookie.remem.value}">

@@ -49,7 +49,7 @@
 			</td>
 			</TR>
 		</TABLE>
-	 <a href="list">글목록</a>
+	 <a href="home">글목록</a>
 
 	<br><br>
 

@@ -10,4 +10,8 @@ public interface BoardDAO {
     Board selectOne(String num);
 
     int insert(Board board);
+
+    int delete(String num);
+
+    void countUp(String num);
 }

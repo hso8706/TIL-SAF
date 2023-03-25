@@ -28,6 +28,7 @@
 					<th>글쓴이</th>
 					<th>날짜</th>
 					<th>조회수</th>
+					<th>삭제</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -38,6 +39,7 @@
 						<td>${b.name}</td>
 						<td>${b.wdate}</td>
 						<td>${b.count}</td>
+						<td><a href="delete?num=${b.num}">삭제</a></td>
 					</tr>
 				</c:forEach>
 			</tbody>

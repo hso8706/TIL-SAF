@@ -37,6 +37,24 @@ public class FrontController extends HttpServlet {
         else if (reqString.equals("/insertProcess")){
             bcon.insertProcess(request, response);
         }
+        //home(a tag) - delete - controller - service - dao - db(해당 data) - view(home.jsp)
+        else if (reqString.equals("/delete")){
+            bcon.delete(request, response);
+        }
+        //login section
+        //1. login 화면으로 이동, 2. login 실시, 3. logout 기능
+        //home(loginCheck) - loginForm : 화면 전환
+        else if (reqString.equals("/loginForm")){
+            ucon.loginForm(request, response);
+        }
+        //실제 로그인 처리 기능, loginForm form 태그 액션
+        else if (reqString.equals("/loginProcess")){
+            ucon.loginProcess(request, response);
+        }
+        //home - loginCheck -loginOut
+        else if (reqString.equals("/logout")){
+            ucon.logout(request, response);
+        }
     }
 
     @Override

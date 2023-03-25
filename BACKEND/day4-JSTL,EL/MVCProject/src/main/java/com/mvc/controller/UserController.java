@@ -29,6 +29,18 @@ public class UserController {
     public void logout(HttpServletRequest request, HttpServletResponse response) {
         // list.jsp 에서 `로그아웃` 버튼 존재
         // logout : 입력된 user 정보가 있으면 실행되는 메서드, 세션에 저장한 정보를 삭제하고 초기화면으로 돌아가기
+
+        // 세션에 저장된 로그인 정보를 삭제하고 초기화면으로 가기
+        // 세션 얻기
+        HttpSession session = request.getSession();
+        session.setAttribute("user", null);
+
+        // 초기화면으로 redirect
+        try {
+            response.sendRedirect("list");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public void loginProcess(HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -68,5 +80,10 @@ public class UserController {
             response.sendRedirect(url);
         }
 
+        try {
+            response.sendRedirect(url);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

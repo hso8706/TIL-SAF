@@ -40,6 +40,21 @@ public class BoardDAOImpl implements BoardDAO{
     }
 
     @Override
+    public void countUp(String num) {
+        int rs = -1;
+        try {
+            Connection con = dbUtil.getConnection();
+            String q = "update board set count = count + 1 where num = ?";
+            PreparedStatement stat = con.prepareStatement(q);
+            stat.setString(1, num);
+            rs = stat.executeUpdate();
+            con.close();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Override
     public Board selectOne(String num) {
         Board result = null;
         try {
@@ -80,6 +95,22 @@ public class BoardDAOImpl implements BoardDAO{
             stat.setString(4, board.getContent());
             rs = stat.executeUpdate();
 
+            con.close();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return 0;
+    }
+
+    @Override
+    public int delete(String num) {
+        int rs = -1;
+        try {
+            Connection con = dbUtil.getConnection();
+            String q = "delete from board where num = ?";
+            PreparedStatement stat = con.prepareStatement(q);
+            stat.setString(1, num);
+            rs = stat.executeUpdate();
             con.close();
         } catch (SQLException e) {
             throw new RuntimeException(e);
