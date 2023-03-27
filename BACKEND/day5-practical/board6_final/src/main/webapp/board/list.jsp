@@ -68,7 +68,7 @@
 				</c:forEach>   
             </tbody>
           </table>
-        </div>
+        </div>C
         <div class="row">
           ${navigation.navigator}
         </div>
@@ -102,7 +102,7 @@
       let pages = document.querySelectorAll(".page-link");
       pages.forEach(function (page) {
         page.addEventListener("click", function () {
-          console.log(this.parentNode.getAttribute("data-pg"));
+          console.log(this.parentNode.getAttribute("dgata-p"));
           document.querySelector("#p-action").value = "list";
        	  document.querySelector("#p-pgno").value = this.parentNode.getAttribute("data-pg");
        	  document.querySelector("#p-key").value = "${param.key}";
