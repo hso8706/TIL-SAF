@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="demo:war exploded" />
+    </artifacts-to-build>
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b2ab9399-1bc2-4495-8766-dbcc4ddcf944" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../day4-JSTL,EL/MVCProject/src/main/java/com/mvc/dao/UserDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../day4-JSTL,EL/MVCProject/src/main/java/com/mvc/dao/UserDAOImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/sample/controller/ProductController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/sample/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/sample/controller/WebFrontController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/sample/dto/Product.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/sample/dto/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/sample/model/dao/ProductDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/sample/model/dao/ProductDAOImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/sample/model/dao/UserDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/sample/model/dao/UserDAOImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/sample/model/service/ProductService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/sample/model/service/ProductServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/sample/model/service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/sample/model/service/UserServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/ssafy/sample/util/DBUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/ssafytest.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/jstl-1.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/mysql-connector-j-8.0.32.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/error/error.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/include/footer.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/include/head.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/include/nav.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/product/list.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/product/read.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/product/regist.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../temp/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../temp/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../temp/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../temp/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../temp/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../temp/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../temp/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../temp/src/main/java/com/ssafy/sample/controller/WebController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../temp/src/main/java/com/ssafy/sample/controller/WebFrontController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../temp/src/main/java/com/ssafy/sample/dto/Product.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../temp/src/main/java/com/ssafy/sample/dto/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../temp/src/main/java/com/ssafy/sample/model/dao/ProductDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../temp/src/main/java/com/ssafy/sample/model/dao/ProductDAOImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../temp/src/main/java/com/ssafy/sample/model/dao/UserDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../temp/src/main/java/com/ssafy/sample/model/dao/UserDAOImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../temp/src/main/java/com/ssafy/sample/model/service/ProductService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../temp/src/main/java/com/ssafy/sample/model/service/ProductServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../temp/src/main/java/com/ssafy/sample/model/service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../temp/src/main/java/com/ssafy/sample/model/service/UserServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../temp/src/main/java/com/ssafy/sample/util/DBUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../temp/src/main/resources/ssafytest.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../temp/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../3월/0323-jstl,el/EL, JSTL_교재 정리.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../3월/0323-jstl,el/EL, JSTL_교재 정리.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../day3-MVC/BackEndProject/out/production/BackEndProject/com/basic/LifeCycleTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../day3-MVC/BackEndProject/out/production/BackEndProject/com/basic/LoginCheck.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../day3-MVC/BackEndProject/out/production/BackEndProject/com/basic/MessageServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../day3-MVC/BackEndProject/out/production/BackEndProject/com/basic/Servlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../day3-MVC/BackEndProject/out/production/BackEndProject/com/basic/Survey.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../day3-MVC/BackEndProject/out/production/BackEndProject/com/cookie/CookieTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../day3-MVC/BackEndProject/out/production/BackEndProject/com/db/Detail.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../day3-MVC/BackEndProject/out/production/BackEndProject/com/db/JdbcMySQL.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../day3-MVC/BackEndProject/out/production/BackEndProject/com/db/Start.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../day3-MVC/BackEndProject/out/production/BackEndProject/com/session/CartServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../day3-MVC/BackEndProject/out/production/BackEndProject/com/session/CheckOutServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../day3-MVC/BackEndProject/out/production/BackEndProject/com/session/ShopServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../day4-JSTL,EL/MVCProject/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../day4-JSTL,EL/MVCProject/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../day4-JSTL,EL/MVCProject/src/main/java/com/mvc/controller/BoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../day4-JSTL,EL/MVCProject/src/main/java/com/mvc/controller/BoardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../day4-JSTL,EL/MVCProject/src/main/java/com/mvc/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../day4-JSTL,EL/MVCProject/src/main/java/com/mvc/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../day4-JSTL,EL/MVCProject/src/main/java/com/mvc/dao/BoardDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../day4-JSTL,EL/MVCProject/src/main/java/com/mvc/dao/BoardDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../day4-JSTL,EL/MVCProject/src/main/java/com/mvc/dao/BoardDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../day4-JSTL,EL/MVCProject/src/main/java/com/mvc/dao/BoardDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../day4-JSTL,EL/MVCProject/src/main/java/com/mvc/front/BoardFrontController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../day4-JSTL,EL/MVCProject/src/main/java/com/mvc/front/BoardFrontController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../day4-JSTL,EL/MVCProject/src/main/java/com/mvc/service/BoardServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../day4-JSTL,EL/MVCProject/src/main/java/com/mvc/service/BoardServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../day4-JSTL,EL/MVCProject/src/main/java/com/mvc/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../day4-JSTL,EL/MVCProject/src/main/java/com/mvc/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../day4-JSTL,EL/MVCProject/src/main/java/com/mvc/service/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../day4-JSTL,EL/MVCProject/src/main/java/com/mvc/service/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../day4-JSTL,EL/MVCProject/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../day4-JSTL,EL/MVCProject/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../day4-JSTL,EL/MVCProject/src/main/webapp/views/insertForm.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../day4-JSTL,EL/MVCProject/src/main/webapp/views/insertForm.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../day4-JSTL,EL/MVCProject/src/main/webapp/views/loginCheck.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../day4-JSTL,EL/MVCProject/src/main/webapp/views/loginCheck.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../day4-JSTL,EL/MVCProject/src/main/webapp/views/loginForm.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../day4-JSTL,EL/MVCProject/src/main/webapp/views/loginForm.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../day4-JSTL,EL/MVCProject/src/main/webapp/views/read.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../day4-JSTL,EL/MVCProject/src/main/webapp/views/read.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../day4-JSTL,EL/MVCProject/target/MVCProject/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/../../day4-JSTL,EL/MVCProject/target/MVCProject/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../day4-JSTL,EL/MVCProject/target/MVCProject/WEB-INF/classes/com/mvc/controller/BoardController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../day4-JSTL,EL/MVCProject/target/MVCProject/WEB-INF/classes/com/mvc/controller/BoardController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../day4-JSTL,EL/MVCProject/target/MVCProject/WEB-INF/classes/com/mvc/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../day4-JSTL,EL/MVCProject/target/MVCProject/WEB-INF/classes/com/mvc/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../day4-JSTL,EL/MVCProject/target/MVCProject/WEB-INF/classes/com/mvc/dao/BoardDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../day4-JSTL,EL/MVCProject/target/MVCProject/WEB-INF/classes/com/mvc/dao/BoardDAOImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../day4-JSTL,EL/MVCProject/target/MVCProject/WEB-INF/classes/com/mvc/front/BoardFrontController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../day4-JSTL,EL/MVCProject/target/MVCProject/WEB-INF/classes/com/mvc/front/BoardFrontController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../day4-JSTL,EL/MVCProject/target/MVCProject/WEB-INF/classes/com/mvc/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../day4-JSTL,EL/MVCProject/target/MVCProject/WEB-INF/classes/com/mvc/service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../day4-JSTL,EL/MVCProject/target/MVCProject/WEB-INF/classes/com/mvc/util/DBUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../day4-JSTL,EL/MVCProject/target/MVCProject/WEB-INF/classes/com/mvc/util/DBUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../day4-JSTL,EL/MVCProject/target/MVCProject/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../day4-JSTL,EL/MVCProject/target/MVCProject/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../day4-JSTL,EL/MVCProject/target/MVCProject/views/insertForm.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../day4-JSTL,EL/MVCProject/target/MVCProject/views/insertForm.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../day4-JSTL,EL/MVCProject/target/MVCProject/views/loginCheck.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../day4-JSTL,EL/MVCProject/target/MVCProject/views/loginCheck.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../day4-JSTL,EL/MVCProject/target/MVCProject/views/loginForm.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../day4-JSTL,EL/MVCProject/target/MVCProject/views/loginForm.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../day4-JSTL,EL/MVCProject/target/MVCProject/views/read.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../day4-JSTL,EL/MVCProject/target/MVCProject/views/read.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../day4-JSTL,EL/MVCProject/target/classes/com/mvc/controller/BoardController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../day4-JSTL,EL/MVCProject/target/classes/com/mvc/controller/BoardController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../day4-JSTL,EL/MVCProject/target/classes/com/mvc/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../day4-JSTL,EL/MVCProject/target/classes/com/mvc/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../day4-JSTL,EL/MVCProject/target/classes/com/mvc/dao/BoardDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../day4-JSTL,EL/MVCProject/target/classes/com/mvc/dao/BoardDAOImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../day4-JSTL,EL/MVCProject/target/classes/com/mvc/front/BoardFrontController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../day4-JSTL,EL/MVCProject/target/classes/com/mvc/front/BoardFrontController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../day4-JSTL,EL/MVCProject/target/classes/com/mvc/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../day4-JSTL,EL/MVCProject/target/classes/com/mvc/service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../day4-JSTL,EL/MVCProject/target/classes/com/mvc/util/DBUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../day4-JSTL,EL/MVCProject/target/classes/com/mvc/util/DBUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../day4-JSTL,EL/MVCProject_Prof/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../day4-JSTL,EL/MVCProject_Prof/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../DATABASE/SAF_학습자료/DB04_MYSQL_JDBC.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../DATABASE/SAF_학습자료/DB04_MYSQL_JDBC.md" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="workspaceImportEnabled" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2NRZs0iIRV2Vy0dkEsHTLPknKcG" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/SSAFY/Desktop/TIL-SAF/BACKEND/day5-practical/demo/src/main/resources",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.ssafy.sample.controller" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\SSAFY\Desktop\TIL-SAF\BACKEND\day5-practical\demo\src\main\resources" />
+      <recent name="C:\Users\SSAFY\Desktop\TIL-SAF\BACKEND\day5-practical\demo\src\main\java" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\SSAFY\Desktop\TIL-SAF\BACKEND\day5-practical\demo\src\main\webapp" />
+      <recent name="C:\Users\SSAFY\Desktop\TIL-SAF\BACKEND\day5-practical\demo\src\main\webapp\WEB-INF" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Tomcat 9.0.73" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.73" ALTERNATIVE_JRE_ENABLED="false">
+      <deployment>
+        <artifact name="demo:war exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="/web_Sample" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="db8ff528-91b1-4f4d-a080-2d0a661ac4c3" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="51861" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Profile">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="demo:war exploded" />
+        </option>
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b2ab9399-1bc2-4495-8766-dbcc4ddcf944" name="Changes" comment="" />
+      <created>1679629059539</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1679629059539</updated>
+      <workItem from="1679629060639" duration="7781000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/webapp/product/regist.jsp</url>
+          <line>18</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
