@@ -1,5 +1,5 @@
 # 23.04.13
-## DB 시험 대비
+## DB 시험 대비(update)
 
 ### View
 - 생성
@@ -14,7 +14,19 @@
 - PK, FK를 사용하는 이유
   - 데이터의 무결성을 위해서
   - 잘못된 데이터의 저장을 방지하기 위해서
-- 클러스터형 인덱스랑 같이 기억
+- PK == unique + not null
+
+### FK의 데이터 입력, 삭제
+- 부모 테이블, 자식 테이블
+  - FK는 다른 테이블의 PK를 참조하는 column이다.
+  - 부모 테이블 : 참조 당하는 테이블
+  - 자식 테이블 : 참조하는 테이블
+- 데이터 입력 순서
+  - 부모 데이터 입력 => 자식 데이터 입력 순서
+- 데이터 삭제 순서
+  - 자식 데이터 삭제 => 부모 데이터 삭제 순서
+- on ~ cascade 옵션
+  - on delete cascade : 부모 테이블 데이터 삭제 시 자동으로 자식 테이블 데이터까지 삭제
 
 ### Clustered Index
 - 테이블 당 하나만 생성할 수 있는 인덱스
@@ -29,6 +41,7 @@
 - SubQuery의 결과를 받아내는 키워드
   - 단일행 결과 반환인 경우: = 키워드 사용(in도 가능)
   - 다중행 결과 반환인 경우: in 키워드 사용
+- join과 subquery는 같은 기능으로 사용 가능하며 변환할 수 있음.
 
 ### Join
 - join의 종류
@@ -59,14 +72,18 @@
 - 반드시 소괄호로 감싸져 있어야 한다.
 
 ### SQL 구분
-- DDL
-  - create, drop, alter
-- DML(CRUD 작업에 사용)
-  - insert, delete, update, select
-- DCL
-  - grand, revoke
-- TCL
-  - commit, rollback
+- SQL 구문 종류
+  - DML : Data Manipulation Language
+    - SELECT, INSERT, UPDATE, DELETE
+    - 데이터 조작어, 테이블의 Records를 조작함(CRUD)
+  - DDL : Data Definition Language
+    - CREATE, ALTER, DROP, RENAME
+    - 데이터 정의어, DB 객체의 구조를 정의
+  - DCL : Data Control Language(접근 권한 변경)
+    - GRANT, REVOKE
+    - 데이터 제어어, DB나 Table의 접근권한이나 CRUD 권한을 정의
+  - TCL : Transaction Control Language
+    - COMMIT, ROLLBACK
 
 ### Subquery
 - 쿼리(main query)문 내에 다른 쿼리문이 포함되어 있는 경우에, 포함된 쿼리를 subquery라고 부름
@@ -121,7 +138,10 @@
 
 ### view, index
 - view란?
-  - 
+  - 물리적으로 존재하지 않는 가상의 테이블
+  - view를 만들면 데이터가 아닌 쿼리문(view를 만들때 사용된)만 저장된다.
+  - view는 일반적으로 조회의 용도로 사용
+  - view에 수정 작업(update, insert, delete)를 하면 원래 테이블에 반영이 된다.
 - index란?
   - 테이블에 대한 동작 속도를 높여주는 자료 구조(DB 분야 한정)
     - 인덱스가 없다면 조회를 위해서 항상 완탐
@@ -140,7 +160,6 @@
 - 사용하지 않는 index는 삭제
 - cardinality가 높은 컬럼
   - 한 컬럼에 들어가는 값의 종류가 다양할 수록 cardinality가 높다고 본다(예. 성별 컬럼은 cardinality가 낮음)
-
 
 ### like 검색; 무조건 나오나봄 ㅋㅋ
 - where fname like '%A%' : 중간에 A가 들어가는거 검색 
@@ -167,3 +186,123 @@
 - Relationship
   - Entity와 Entity 관계
   - 마름모
+
+### 관계 타입의 변환
+- 1:1
+  - 한 쪽이 다른 쪽의 pk를 fk를 갖음
+  - 방향은 상관없다
+- 1:N
+  - N쪽이 1쪽의 pk를 fk로 갖음
+  - 방향이 바뀌면 안된다. (pk가 아닌 것이 되어버린다.)
+- N:N
+  - 중간에 관계 테이블을 생성
+  - 생성된 관계 테이블은 양쪽의 PK를 FK로 갖고, 이를 통해 양 쪽 테이블을 연결한다.
+  - FK들을 묶어서 복합 PK를 갖음(하지만 보통은 불편해서 PK를 따로 생성한다.)
+
+### 식별, 비식별 관계
+- 식별 관계
+  - 다른 테이블의 pk를 본인의 pk로 사용하는 경우
+  - 실선 사용
+- 비식별 관계
+  - 식별 관계가 아닌 경우
+  - 점선 사용
+
+```
+# select 기본 구조
+select      //5
+from        //1
+where       //2
+group by    //3
+having      //4
+order by    //6
+-- (1)어떤 테이블에서 (2)어떤 조건으로 뽑은 데이터를 (3)그룹화를 시키는데 (4)조건으로 그룹화를 시켜서 (5)조회하려한다. 조회를 위한 최종 데이터로는 (6)의 조건으로 정렬한다.
+
+# insert 기본 구조; table: column 3개(int, varchar, varchar)
+insert into test values (1, 'aaa', 'bbb');
+
+# group by 주의 : 다중 컬럼, 단일 컬럼
+
+# table 생성 및 pk 설정
+-- create table; inline
+create table test(
+id int primary key,
+name varchar(20) not null);
+
+-- create table; outline
+create table test(
+id int,
+name varchar(20) not null,
+primary key(id));
+
+-- create table; alter
+create table test(
+id int,
+name varchar(20) not null);
+alter table test add constraint test_pk primary key(id);
+
+# alter keyword
+alter table test add tel varchar(33); -- alter + add
+alter table test modify tel varchar(11); -- alter + modify
+alter table test drop tel; -- alter + drop
+alter table test rename column tel to phone; -- alter + rename colmun
+
+# alter + PK or FK
+alter table test1 add constraint test_pk primary key(id);
+alter table test2 add constraint test2_fk foreign key(test_fk) reference test1(id);
+
+# index
+-- index 생성
+create index idx_name on testTable (testColumn);
+-- index 조회
+show index from testTable
+-- index 삭제
+drop index idx_name on testTable
+alter table testTable drop index idx_name;
+
+# view
+-- view 생성; create view + as + select
+create view view_name
+as
+select *
+from test;
+-- view 조회
+select *
+from view_name;
+-- view 삭제
+drop view view_name;
+
+# join
+/*
+table1: id, same
+table2: id, same
+*/
+-- 1. where
+select t1.id t2.id t1.same
+from table1 t1, table2 t2
+where t1.same = t2.same; -- and로 추가
+-- 2. join~on
+select t1.id t2.id t1.same
+from table1 t1 join table2 t2 -- join == inner join
+on t1.same = t2.same; -- join~on으로 추가
+-- 3. join~using
+select t1.id t2.id t1.same
+from table1 t1 join table2 t2
+using (same); -- 완전 동일한 column, ()사용
+
+# subquery 예시1. 
+select *
+from emp
+where salary in (select salary
+				        from emp
+				        where deptid = 60);
+
+# subquery 예시2. 
+select empid, fname, mgrid
+from emp
+where (salary, deptid) in ( -- salary, deptid 동시에 같아야함.
+			select salary, deptid
+            from emp
+            where comm is not null	
+            and mgrid = 148);
+
+```
