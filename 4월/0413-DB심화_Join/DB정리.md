@@ -86,3 +86,5 @@
 - where fname like '%A_' : 끝에서 두번째가 A인 레코드 검색 
 
 ### DB modeling
+
+### 개논물
