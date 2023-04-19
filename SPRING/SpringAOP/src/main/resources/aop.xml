@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+
+<!-- 1. Target 객체 -->
+<bean id="avante" class = "com.aop.Avante"/>
+
+<!-- 2. Aspect 객체 -->
+<bean id="ct" class = "com.aop.ColorTracker"/>
+
+<!-- 4. Target_Board 객체 -->
+<bean id="board" class="com.aop.board.FreeBoard"/>
+
+<!-- 5. Aspect Board 객체 -->
+<bean id="bTracker" class="com.aop.board.BoardTracker"/>
+
+<!-- 3. proxy 자동 생성을 위한 빈 태그 -->
+<aop:aspectj-autoproxy>
+	<aop:include name="ct"/><!-- aspect가 여러 개면 include를 여러개 넣어주면됨 -->
+	<aop:include name="bTracker"/>
+</aop:aspectj-autoproxy>
+</beans>

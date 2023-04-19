@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+<context:component-scan base-package="com.coffee.annotation"/>
+
+
+<bean id="ame1" class="com.coffee.annotation.Americano"><!-- default로는 기본 생성자만 가능 -->
+	<constructor-arg name="origin" value="brazil"/><!-- 생성자 인자 전달 -->
+	<property name="price" value="5000"/><!-- setter 호출 -->
+</bean>
+
+<bean id="latte1" class="com.coffee.annotation.CaffeLatte">
+	<constructor-arg index="0" value="columbia"/><!-- 생성자 인자는 인덱스로도 전달 가능 -->
+	<property name="price" value="6000"/>
+</bean>
+
+<bean id="ame2" class="com.coffee.annotation.Americano">
+	<constructor-arg name="origin" value="peru"/>
+	<property name="price" value="6000"/>
+</bean>
+
+<bean id="latte2" class="com.coffee.annotation.CaffeLatte">
+	<constructor-arg index="0" value="vietnam"/>
+	<property name="price" value="7000"/>
+</bean>
+</beans>

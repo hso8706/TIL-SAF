@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	default-lazy-init="default"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<!-- Spring container가 읽어 들여서 객체를 생성해 줌 -->
+
+<!-- com.coffee3.Americano coff1 = new com.coffee3.Americano(); -->
+<bean id="coff1" class="com.coffee3.Americano" lazy-init="true"/>
+
+<bean id="coff2" class="com.coffee3.CaffeLatte"/>
+
+<!-- Spring container가 해당 문서를 읽고 위 두 객체를 생성하여 스탠바이 시켜 둘 예정 -->
+</beans>

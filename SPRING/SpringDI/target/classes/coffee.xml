@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<!-- Spring container가 읽어 들여서 객체를 생성해 줌; 순서 상관 없음 -->
+<bean id="star" class="com.coffee.Starbucks">
+	<constructor-arg name="ame" ref="ame1"/>
+	<constructor-arg name="latte" ref="latte1"/>
+</bean>
+
+<bean id="bean" class="com.coffee.CoffeeBean">
+	<property name="ame" ref="ame2"/>
+	<property name="latte" ref="latte2"/>
+</bean>
+
+<bean id="bean2" class="com.coffee.CoffeeBean">
+	<property name="ame">
+		<bean class="com.coffee.Americano">
+			<constructor-arg name="origin" value="korea"/>
+			<property name="price" value="9000"/>
+		</bean>
+	</property>
+	<property name="latte">
+		<bean class="com.coffee.CaffeLatte">
+			<constructor-arg name="origin" value="india"/>
+			<property name="price" value="5700"/>
+		</bean>
+	</property>
+</bean>
+
+
+<bean id="ame1" class="com.coffee.Americano"><!-- default로는 기본 생성자만 가능 -->
+	<constructor-arg name="origin" value="brazil"/><!-- 생성자 인자 전달 -->
+	<property name="price" value="5000"/><!-- setter 호출 -->
+</bean>
+
+<bean id="latte1" class="com.coffee.CaffeLatte">
+	<constructor-arg index="0" value="columbia"/><!-- 생성자 인자는 인덱스로도 전달 가능 -->
+	<property name="price" value="6000"/>
+</bean>
+
+<bean id="ame2" class="com.coffee.Americano">
+	<constructor-arg name="origin" value="peru"/>
+	<property name="price" value="6000"/>
+</bean>
+
+<bean id="latte2" class="com.coffee.CaffeLatte">
+	<constructor-arg index="0" value="vietnam"/>
+	<property name="price" value="7000"/>
+</bean>
+
+</beans>
