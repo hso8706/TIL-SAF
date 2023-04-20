@@ -17,7 +17,7 @@
 </head>
 <body>
 	<div class="container text-center">
-		<img src="image/img1.jfif" />
+		<img src="resources/image/f1.jpg" />
 		<h1>MVC 게시판</h1>
 		<jsp:include page="loginCheck.jsp"/>
 		

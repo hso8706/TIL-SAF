@@ -9,13 +9,16 @@
 	service, dao, db pool
 	-->
 		
+	<!-- service -->
 	<context:component-scan base-package="com.mvc.service"/>
+	<!-- dao -->
 	<context:component-scan base-package="com.mvc.dao"/>
 	
+	<!-- connection pool -->
 	<bean id="dataSource" class="org.springframework.jdbc.datasource.SimpleDriverDataSource">
-        <property name="driverClass" value="com.mysql.cj.jdbc.Driver"/>
-        <property name="url" value="jdbc:mysql://127.0.0.1:3306/scottdb?serverTimezone=UTC&useUniCode=yes&characterEncoding=UTF-8"/>
-        <property name="username" value="scott"/>
-        <property name="password" value="tigertiger"/>
-    </bean>
+	    <property name="driverClass" value="com.mysql.cj.jdbc.Driver"/>
+	    <property name="url" value="jdbc:mysql://127.0.0.1:3306/scottdb?serverTimezone=UTC&amp;useUniCode=yes&amp;characterEncoding=UTF-8"/>
+	    <property name="username" value="scott"/>
+	    <property name="password" value="tiger"/>
+	</bean>
 </beans>

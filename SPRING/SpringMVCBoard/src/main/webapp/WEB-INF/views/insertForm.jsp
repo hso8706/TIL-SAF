@@ -16,7 +16,7 @@
 </head>
 <BODY>
 	<div class="container text-center">
-		<img src="image/f2.jpg" />
+		<img src="resources/image/f2.jpg" />
 		<h1>새글쓰기</h1>
 		<form action="insertProcess" method="post">
 			<div class="form-group text-left">

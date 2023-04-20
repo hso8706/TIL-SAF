@@ -11,7 +11,6 @@ import javax.sql.DataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.mvc.util.DBUtil;
 import com.mvc.vo.Board;
 
 @Repository
@@ -25,7 +24,7 @@ public class BoardDAOImpl implements BoardDAO {
 		ArrayList<Board> list = new ArrayList<>();
 
 		try {
-			Connection con = util.getConnection();
+			Connection con = ds.getConnection(); // pool에서 connection 빌려옴
 			Statement stat = con.createStatement();
 			String q = "select num, name, wdate, title, count from board order by num desc";
 			ResultSet rs = stat.executeQuery(q);
@@ -36,11 +35,10 @@ public class BoardDAOImpl implements BoardDAO {
 				String wdate = rs.getString(3);
 				String title = rs.getString(4);
 				String count = rs.getString(5);
-
 				Board b = new Board(num, null, name, wdate, title, null, count);
 				list.add(b);
 			}
-			con.close();
+			con.close(); //pool에 반납하는 과정, 필수
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -51,7 +49,7 @@ public class BoardDAOImpl implements BoardDAO {
 	public Board selectOne(String num) {
 		Board b = null;
 		try {
-			Connection con = util.getConnection();
+			Connection con = ds.getConnection();
 			String q = "select num, name, wdate, title, content, count from board where num = ?";
 			PreparedStatement stat = con.prepareStatement(q);
 			stat.setString(1, num);
@@ -77,7 +75,7 @@ public class BoardDAOImpl implements BoardDAO {
 	public int insert(Board b) {
 		int x = 0;
 		try {
-			Connection con = util.getConnection();// pool�뿉�꽌 �븳媛� 鍮뚮젮�샂
+			Connection con = ds.getConnection();
 			String q = "insert into board(pass,name,wdate,title,content,count)" + " values(?,?,sysdate(),?,?,0)";
 
 			PreparedStatement stat = con.prepareStatement(q);
@@ -99,9 +97,9 @@ public class BoardDAOImpl implements BoardDAO {
 		int x = 0;
 		try {
 			String q = "delete from board where num = ?";
-			Connection con = util.getConnection();// pool�뿉�꽌 �븳媛� 鍮뚮젮�샂
+			Connection con = ds.getConnection();
 			PreparedStatement stat = con.prepareStatement(q);
-			stat.setString(1, num);// ?�뿉 setting
+			stat.setString(1, num);
 			x = stat.executeUpdate();
 			con.close();
 		} catch (Exception e) {
@@ -115,9 +113,9 @@ public class BoardDAOImpl implements BoardDAO {
 		int x = 0;
 		try {
 			String q = "update board set count = count + 1 where num = ?";
-			Connection con = util.getConnection();// pool�뿉�꽌 �븳媛� 鍮뚮젮�샂
+			Connection con = ds.getConnection();
 			PreparedStatement stat = con.prepareStatement(q);
-			stat.setString(1, num);// ?�뿉 setting
+			stat.setString(1, num);
 			x = stat.executeUpdate();
 			con.close();
 		} catch (Exception e) {

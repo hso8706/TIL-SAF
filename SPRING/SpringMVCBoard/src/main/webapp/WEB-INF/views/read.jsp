@@ -17,7 +17,7 @@
 </head>
 <body>
 	<div class="container text-center">
-	<img src="image/f2.jpg"/>
+	<img src="resources/image/f2.jpg"/>
 		<h1>글읽기</h1>		
 		<p>
 			

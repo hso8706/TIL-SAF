@@ -18,30 +18,24 @@
 </head>
 <body>
 	<div class="container text-center">
-		<img src="image/f3.jpg" class="rounded-circle" />
+		<img src="resources/image/f3.jpg" class="rounded-circle" />
 		<h1>Login</h1>
-		<c:if test="${!empty msg}">${msg }</c:if>
+		${errormsg }
+		<!-- ${param.XYZ } -->
 		
 		<form method="post" action="loginProcess">
 			<div class="form-group text-left">
 				<label for="id">ID:</label> 
-				<input type="text" class="form-control"	name="id" value="${cookie.remem.value}">
+				<input type="text" class="form-control"	name="id">
 			</div>
 
 			<div class="form-group  text-left">
 				<label for="pass">Password:</label> 
 				<input type="password" class="form-control" value="ssafy" name="pass">
 			</div>
-			
 			<div class="form-check mb-3">
-				<label class="form-check-label"> 
-					<c:if test="${cookie.remem.value == null}">
-						<input class="form-check-input" type="checkbox" name="remember">아이디 기억하기
-					</c:if>
-					
-					<c:if test="${cookie.remem.value != null}">
-						<input class="form-check-input" type="checkbox" name="remember" checked>아이디 기억하기
-					</c:if>
+				<label class="form-check-label">
+					<input class="form-check-input" type="checkbox" name="admin" value="123">아이디 기억하기
 				</label>
 			</div>
 			<button type="submit" class="btn btn-primary">Submit</button>

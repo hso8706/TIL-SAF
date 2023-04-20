@@ -13,10 +13,6 @@ import com.mvc.vo.Board;
 public class BoardServiceImpl implements BoardService {
 	@Autowired
 	BoardDAO dao;//interface type
-	
-	public BoardServiceImpl() {
-		dao = new BoardDAOImpl();
-	}	
 
 	@Override
 	public ArrayList<Board> selectAll() {		
