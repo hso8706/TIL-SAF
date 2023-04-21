@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="SpringSsafySample:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>SpringSsafySample</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="sample-1.0.0-BUILD-SNAPSHOT.war">
+      <element id="artifact" artifact-name="SpringSsafySample:war exploded" />
+    </root>
+  </artifact>
+</component>
