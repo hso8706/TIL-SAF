@@ -1,0 +1,33 @@
+package com.mybatis;
+
+import java.io.IOException;
+import java.io.Reader;
+import java.util.List;
+
+import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+
+
+public class CustomerTest {
+
+    public static void main(String[] args) {
+        String conf = "res/Configuration.xml";//mybatis 설정 파일(1.typeAlias(vo), 2. DB Pool 정보 3. Mapper file(sql))
+        Reader reader; // 입력 파이프
+
+        try {
+        	//Resources 클래스는 클래스 패스나 파일 시스템, 웹 url로부터 자원을 로딩하도록 도와주는 객체
+            reader = Resources.getResourceAsReader(conf);//Configuration.xml
+            SqlSessionFactoryBuilder builder = new SqlSessionFactoryBuilder();
+            SqlSessionFactory factory = builder.build(reader);
+          
+
+
+
+          
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}

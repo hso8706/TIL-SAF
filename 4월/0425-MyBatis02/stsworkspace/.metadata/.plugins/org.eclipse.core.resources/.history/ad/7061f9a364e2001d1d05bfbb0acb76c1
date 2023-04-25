@@ -1,0 +1,48 @@
+package com.mybatis;
+
+import java.io.IOException;
+import java.io.Reader;
+import java.util.List;
+
+import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+
+
+public class CustomerTest {
+
+    public static void main(String[] args) {
+        String conf = "res/Configuration.xml";//mybatis 설정 파일(1.typeAlias(vo), 2. DB Pool 정보 3. Mapper file(sql))
+        Reader reader; // 입력 파이프
+
+        try {
+        	//Resources 클래스는 클래스 패스나 파일 시스템, 웹 url로부터 자원을 로딩하도록 도와주는 객체
+            reader = Resources.getResourceAsReader(conf);//Configuration.xml
+            
+            SqlSessionFactoryBuilder builder = new SqlSessionFactoryBuilder();
+            SqlSessionFactory factory = builder.build(reader);
+            SqlSession session = factory.openSession();//SqlSession: CRUD 메소드 가지고 있음
+          
+            //1.selectList(): 리턴값이 여러개인 경우
+            List<Customer> list = session.selectList("selectAll");
+            for (Customer c : list) {
+            	System.out.println(c);
+            }
+            
+            System.out.println("------------------------");
+            //2. selectOne: 리턴값이 한 개인 경우
+            Customer c= session.selectOne("selectOne", "111");//1번 인자: 실행할 쿼리 id, 2번 인자: 쿼리 파라미터
+            System.out.println(c);
+            
+            //3. insert
+            c = new Customer("999", "Genie", "la");
+            int x = session.insert("insert", c);
+            System.out.println(x);
+
+          
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}

@@ -1,0 +1,12 @@
+package com.mvc.vo;
+
+//vo(value object):媛믪쓣 ???占쏙옙?占쏙옙占�? ?占쏙옙?占쏙옙 ?占쏙옙?占쏙옙.?占쏙옙?占쏙옙占�? ?占쏙옙?占쏙옙 ?占쏙옙肄붾뱶 ?占쏙옙 嫄댁쓽 媛믪쓣 ???占쏙옙?占쏙옙占�? ?占쏙옙?占쏙옙 紐⑹쟻
+public class Board {
+	private String num;
+	private String pass;
+	private String name;
+	private String wdate;
+	private String title;
+	private String content;
+	private String count;
+}

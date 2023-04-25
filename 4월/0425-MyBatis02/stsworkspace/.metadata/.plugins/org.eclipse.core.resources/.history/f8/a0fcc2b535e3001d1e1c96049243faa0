@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mybatis.Customer">	
+
+	<!-- resultMap: select 한 결과와 vo안의 컬럼명이 일치 하지 않을 때, -->
+	<resultMap type="Customer" id="CustomerResult">
+		<result column="empid" property="num"/>
+		<result column="fname" property="name"/>
+		<result column="deptname" property="address"/>
+	</resultMap>
+
+	<select id="selectAll" resultType="Customer"> <!-- resultType: 결과(ResultSet)의 타입 -->
+		select * from customer
+	</select>
+	
+	<select id="selectOne" parameterType="string" resultType="Customer"> <!-- myBatis에서 parameter 사용하는 방법 -->
+		select * from customer where num = #{num}
+	</select>
+	
+	<insert id="insert" parameterType="Customer"> <!-- Customer의 getter가 사용된다. -->
+		insert into customer values(#{num}, #{name}, #{address})
+	</insert>
+	
+	<delete id="delete" parameterType="String">
+		delete from customer where num = #{num}
+	</delete>
+
+	<update id="update" parameterType="String">
+		update customer set address = #{address} where num = #{num}
+	</update>
+	
+	<select id="join" resultMap="CustomerResult"> <!-- join 결과를 받기 위한 vo를 새로 만들거나, 기존 vo를 재활용해야함: column명이 기존 vo랑 다르기 때문 -->
+		select empid, fname, deptname
+		from emp e, dept d
+		where e.deptid = d.deptid
+	</select>
+	
+	<!-- dynamic query -->
+	<select id="selectMore" resultMap="CustomerResult" parameterType="map">
+		select empid, fname, deptid deptname
+		from emp
+		where deptid = 50
+		<if test="fname != null">
+		and fname like concat('%', #{fname}, '%')
+		</if>
+	</select>
+	
+	<select id="selectMore2" parameterType="map" resultMap="CustomerResult">
+		select empid, lname fname, email deptname from emp
+		<if test="deptid != null">
+			where deptid = #{deptid}
+		</if>
+		
+		<if test="jobid != null">
+			where jobid = #{jobid}
+		</if>
+	</select>
+	
+	<select id="selectMore3" parameterType="map" resultMap="Cuu">
+		select empid, fname, deptid deptname
+		from emp
+		where deptid is not null
+		<choose>
+			<when test="jobid != null">
+				and jobid = #{jobid}
+			</when>
+			
+			<when test="email != null">
+				and email like concat('%', #{email}, '%')
+			</when>
+			
+			<otherwise>
+				and fname like concat('%', #{fname}, '%')
+			</otherwise>
+		</choose>
+	</select>
+</mapper>
