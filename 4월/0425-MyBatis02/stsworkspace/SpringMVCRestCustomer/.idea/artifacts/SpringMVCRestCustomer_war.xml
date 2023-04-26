@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="SpringMVCRestCustomer:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>SpringMVCRestCustomer</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="cus-1.0.0-BUILD-SNAPSHOT.war">
+      <element id="artifact" artifact-name="SpringMVCRestCustomer:war exploded" />
+    </root>
+  </artifact>
+</component>
