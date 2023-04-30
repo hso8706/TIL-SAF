@@ -18,8 +18,9 @@
   - 처리 요청(URL)
 - 2. DispatcherServlet => HandlerMapping
   - 요청 URL과 매핑되는 Controller 검색
-- 3. DispatcherServlet => Controller => Model => Controller
+- 3. DispatcherServlet => Controller => Business Logic(Service + DB) => Controller
   - HandlerMapping이 검색한 Controller에 요청을 전달함
+  - Business Logic을 통해 Model 생성
   - Model
     - DB에서 가져온 데이터
 - 4. Controller => DispatcherServlet
