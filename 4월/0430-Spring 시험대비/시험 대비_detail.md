@@ -55,6 +55,9 @@
 
 ### REST 서비스 : 동작 방식 개념(서술 가능성)
 - 요청을 통해 `URI + Methods 정보`를 제공받음
+  - HTTP URI : 제어할 자원(Resource)을 명시
+  - HTTP Method : 해당 자원을 제어하는 명령(GET, POST, PUT, DELETE)
+  - Resource : Client가 원하는 content
   - Method : GET, POST, PUT, DELETE
 - 응답으로 `XML, JSON`을 제공함
   - 이로인해 client가 어떤 기기이든, 화면 크기가 어떻든 상관없어짐
