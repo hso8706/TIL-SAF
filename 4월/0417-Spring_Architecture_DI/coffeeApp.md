@@ -35,7 +35,6 @@
 - CoffeeApp에서는 main.xml만 읽게함
 
 ### 어노테이션
-
 - `<context:component-scan base-package="">`
 
 ### namespace
