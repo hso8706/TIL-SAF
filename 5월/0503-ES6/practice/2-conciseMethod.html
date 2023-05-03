@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- concise method : 객체안의 메소드를 간단하게 표시하는 방법 -->
+    <script>
+        var user = {
+            num: 123,
+            name: 'tommy',
+            info: function(){
+                console.log(this.num, this.name);
+                console.log(this.getNum());
+            },
+            getNum(){ //concise method
+                return this.num;
+            }
+        }
+
+        user.info();
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function go(msg) {
+            console.log(msg);
+        }
+
+        go('will you go?'); // ok
+        go('will you go?', 123); // ok: 남는 파라미터는 상관 없음
+        go(); // undefined: 부족한 파라미터는 undefined
+
+        // 메소드의 파라메터 값이 전달되지 못했을 경우 디폴트 값으로 활용
+        function go2(msg = "default parameter다잉~"){
+            console.log(msg);
+        }
+        
+        go2('will you go?'); // ok
+        go2('will you go?', 123); // ok: 남는 파라미터는 상관 없음
+        go2(); // undefined 해결
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="wageth=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        destructuring assignment (비구조화 할당)
+        : 배열이나 객체가 가지고 있는 값을 개별적인 여러개의 변수에 할당하는 간편한 방식
+     -->
+     <script>
+        // 기존 방식
+        const colors = ['red', 'blue', 'yellow'];
+        const c1 = colors[0];
+        const c2 = colors[1];
+        const c3 = colors[2];
+        console.log(c1, c2, c3);
+
+        // 비구조화 할당
+        const [a1, a2, a3] = colors; // 변수명만 할당하면 됨
+        console.log(a1, a2, a3);
+
+        const user = {
+            id: 'ssafy',
+            name: 'kim',
+            age: 12
+        };
+
+        //기존 방식
+        {
+            let id = user.id; //let은 블럭 단위 변수
+            let name = user.name;
+            let age = user.age;
+            console.log(id, name, age);
+        }
+        //비구조화 할당
+        {
+            let {id, name, age} = user;
+            console.log(id, name, age);
+        }
+        //비구조화 할당 별칭; 변수명의 변경
+        {
+            let {id:ssafyid, name:ssafyname, age:ssafyage} = user;
+            console.log(ssafyid, ssafyname, ssafyage);
+        }
+
+        
+
+     </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- template string: ``백틱을 사용하는경우.
+        줄바꿈도 브라우저에 그대로 표시 가능
+        변수 접근도 가능(${})
+    -->
+    <script>
+        const id = "rainy runaway";
+        const name = "박영서";
+        const age = 29;
+
+        //아래 두 줄은 같은 출력값을 보임
+        console.log(name + "(" + id + ")님! \n 당신의 나이는 " + age + "입니다.");
+        console.log(`${name}(${id})님! 
+ 당신의 나이는 ${age} 입니다.`);
+    </script>
+</body>
+</html>
