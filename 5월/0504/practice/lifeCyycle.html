@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@2"></script>
+</head>
+<body>
+    <div id="app">{{num}} - {{name}}</div>
+    <script>
+        new Vue({
+            el: "#app",
+            data(){ // 메소드 형식으로 데이터를 제공(return)
+                return{
+                    num: 123,
+                    name: "harry"
+                }
+            },
+
+            methods: { // Vue 객체가 갖는 메소드들을 담는 블럭
+                //function(){}...
+            },
+
+            //LifeCycle 관련 메서드; 아래 3개 메소드
+            //callback method : 사용자가 실행하지 않아도 특정 조건이 만족되면 자동으로 실행되는 메소드
+
+            //created
+            //Vue 객체가 생성된 후에 호출됨. 화면과 연결되지 전이라 화면 요소에는 아직 접근 안됨.
+            //data, method 등에는 접근 가능
+            created() {
+                console.log("created..." + this.$el); //속성명으로 접근할 땐 `$`사용    
+                console.log("created..." + this.$data.num); //아래와 같은 출력, 속성명으로 접근
+                console.log("created..." + this.num); //123
+            },
+            
+            //mounted
+            //화면과 연결된 후에 호출. 화면 요소에 접근 가능
+            mounted() {
+                console.log("mounted..." + this.$el);    
+            },
+
+            //updated
+            //(데이터 변경으로 인해) 화면이 변경될 때 호출. 기존 dom이 수정이 되는 상태.
+            updated() {
+                console.log("updated...");    
+            },
+        });
+    </script>
+</body>
+</html>

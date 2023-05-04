@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@2"></script>
+</head>
+<!-- directive
+    - html tag 안에서 v-로 싲가하는 모든 속성들, 화면 요소를 좀 더 쉽게 조작하기 위한 목적
+    - 예시 : v-if, v-for, v-bind, v-model, .....
+-->
+<body>
+    <div id="app">
+        <div v-text="msg"></div>
+        <div v-html="msg"></div> <!-- innerHtml 과 같음 -->
+        <h1>{{uid}}</h1>
+        <h1 v-pre="msg">{{uid}} hello...</h1> <!-- v-pre: 데이터가 아닌 그대로 출력할 때 사용 -->
+        <hr>
+        <a href="#" v-if="flag1">gogo, vue!</a>
+        <a href="#" v-if="flag2">stop, vue!</a><!-- v-if 조건을 체크해서 거짓이면, 주석 태그로 바꿔줌. 즉, 태그 생성 조차도 없음, 이거 근데 왜 a 태그-->
+        <a href="#" v-else>welcome!</a>
+        <hr>
+        <p v-show="flag2">hello, vue!</p><!-- v-show의 경우에는 태그는 생성하지만 CSS(style= "display: none;")를 통해서 화면에 보이지 않게 됨 -->
+        <ul>
+            <li v-for="system in systems">{{system}}</li><!-- v-for: foreach 문, {system} : 자유롭게 사용하는 변수명, {systems} : 순회할 변수(array) -->
+        </ul>
+        <!-- v-bind: 원래 태그가 가지고 있는 속성에 값을 부여할 때 사용. 다른 위치에 존재하는 값을 가져다 씀 -->
+        <h3 v-bind:id="uid">this is h3</h3> <!-- 기본 템플릿 -->
+        <h3 :id="uid">this is another h3</h3> <!-- v-bind 생략 가능 -->
+        <img :src="src" alt="blouse 입니다.">
+        <hr>
+        <button v-on:click="hello">press, me!</button>
+        <button @click="hello">don't press, me!</button>
+    </div>
+
+    <script>
+    new Vue({
+        el: "#app",
+        data() {
+            return {
+                flag1: true,
+                flag2: false,
+                systems: ['window', 'android', 'ios'],
+                uid: 'a123',
+                msg: '<h1>hello</h1>',
+                src: 'blueBlouse.jpg'
+            }
+        },
+        methods: {
+            hello(){
+                alert('hello, vue!');
+            },
+            go(){}
+        },
+    })
+    </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- vue 버전 2 사용 -->
+    <script src="https://unpkg.com/vue@2"></script> <!--view 사용을 위한 코드(CDN)-->
+</head>
+<!--
+    실행 순서
+    1. 뷰 라이브러리 로딩(cdn)
+    2. 화면 요소 생성(html tag로 이루어진 부분. dom)
+    3. Vue 객체 생성
+    4. 생성된 Vue 객체와 화면 연결
+    5. 화면 전환(뷰 객체의 데이터가 화면에 주입됨)
+    6. 데이터가 주입된 화면 최종 확인
+-->
+
+
+<body>
+    <!-- view -->
+    <div id="app">{{num}} : {{message}}</div>
+    <div id="other">{{num}} : {{message}}</div>
+
+    <!-- model -->
+    <script>
+        // vm : view-model(화면과 모델을 서로 연결해서 작업하도록 해주는 역할)
+        let vm = new Vue({
+            el: "#app", // Vue 객체가 관리해야 되는 화면 영역(id)
+            data: {
+                num: 123,
+                message: "hello, vue!"
+            }
+        });
+        
+        //
+        // let vm = new Vue({
+        //     el: "other",
+        //     data: {
+        //         num: 999,
+        //         message: "pink"
+        //     }
+        // })
+
+        let vm2 = new Vue({
+            el: "other",
+            data(){
+                return{
+                num: 999,
+                message: "pink"
+                }
+            }
+        })
+
+    </script>
+</body>
+</html>

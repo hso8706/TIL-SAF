@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@2"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- v-model: 입력칸과 뷰객체의 데이터를 양방향으로 연결시켜 줌.
+            - 입력칸: <input>, <textarea>, <select> 와 같이 사용자가 입력하는 공간에서만 사용 가능
+            - 데이터가 바뀌면 화면이 바뀌고, 화면이 바뀌면 데이터도 바뀐다
+        -->
+        <input type="text" name="id" v-model="id" >
+        <!-- <textarea name="qq" cols="30" rows="10" v-model="color"></textarea> -->
+        <h1>if</h1>
+        <h3 v-if="id == ''">아이디를 입력해주세요!</h3>
+        <h3 v-else-if="id == 'harry'" style="color: red">이미 사용중인 아이디입니다!</h3>
+        <h3 v-else="id != '' && id != 'harry'" style="color: blue">사용 가능한 아이디입니다!</h3>
+
+        <h1>show</h1>
+        <h3 v-show="id == ''">아이디를 입력해주세요!</h3>
+        <h3 v-show="id == 'harry'" style="color: red">이미 사용중인 아이디입니다!</h3>
+        <h3 v-show="id != '' && id != 'harry'" style="color: blue">사용 가능한 아이디입니다!</h3>
+
+    </div>
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                id: '',
+                color: 'red'
+            }
+        })
+    </script>
+</body>
+</html>

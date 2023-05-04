@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>dada's fashion shop</title>
+
+		<style type="text/css">
+			@import url("shop.css");
+		</style>
+	</head>
+	<body>
+		<div class="nav-bar"></div>
+		<div id="app">
+			<div class="product">
+				<div class="product-image">
+					<!-- 1. 상품 이미지 넣기-->
+					<img :src="image" alt="image" />
+				</div>
+
+				<div class="product-info">
+					<!--  2. 상품명 -->
+					<h2>{{product}}</h2>
+
+					<!-- 3. inStock 값에 따라 화면에 'In Stock' OR 'Out of Stock' 표시-->
+					<p v-show ="inStock">In Stock</p>
+					<p v-show ="!inStock">Out of Stock</p>
+					<!-- 4. onSale 값에 따라 화면에 'On Sale!' 표시-->
+					<p v-show ="onSale">On Sale!</p>
+					<!--  5. 상품설명 -->
+					{{description}}
+					<!--  6. 상품 상세 설명 -->
+					<ul>
+						<li v-for="detail in details">
+							{{detail}}
+						</li>
+					</ul>
+					<!--  7. color-box -->
+					<!-- <div style="display: grid; grid-template-columns: 60px 60px; grid-template-rows: 60px;"> -->
+						<button v-for="option in options" v-on:mouseover="colorInfo(option.optionImage)" :id="option.optionId" :style="{backgroundColor: option.optionColor}" class="color-box"></button>
+						<!-- <span v-on:mouseover="violetInfo" style="background-color: violet; margin: 7px;"></span>
+						<span v-on:mouseover="blueInfo" style="background-color: blue; margin: 7px;"></span> -->
+					<!-- </div> -->
+					<hr />
+					<!--  8. button event 처리  -->
+					<button v-on:click="addToCart" style="cursor: pointer;">Add</button>
+					<button v-on:click="removeFromCart" style="cursor: pointer;">Remove</button>
+
+					<div class="cart">
+						<!-- 9.카트안의 상품 갯수 표시-->
+						Cart({{cart}})
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="https://unpkg.com/vue@2"></script>
+		<script>
+			//Create a new button and method to decrement the value of `cart`.
+
+			var app = new Vue({
+				el: "#app",
+				data: {
+					product: "Dadas Blouse",
+					image: "./img/blueBlouse.jpg",
+					inStock: true,
+					max: 10, //재고수량
+					onSale: true,
+					description: "올봄 잇아이템",
+
+					details: ["80% cotton", "20% polyester", "Gender-neutral"],
+					options: [
+						{
+							optionId: 2234,
+							optionColor: "violet",
+							optionImage: "./img/violetBlouse.jpg",
+						},
+						{
+							optionId: 2235,
+							optionColor: "blue",
+							optionImage: "./img/blueBlouse.jpg",
+						},
+					],
+
+					cart: 0, //장바구니에 담은 상품 개수
+				},
+				methods: {
+					addToCart() {
+						if(this.cart != this.max) this.cart = this.cart + 1;
+					},
+					removeFromCart() {
+						if(this.cart != 0) this.cart = this.cart - 1;
+					},
+					// violetInfo(){
+					// 	this.image = this.options[0].optionImage;
+					// },
+					// blueInfo(){
+					// 	this.image = this.options[1].optionImage;
+					// },
+					colorInfo(optionImage){
+						this.image = optionImage;
+					}
+				},
+			});
+		</script>
+	</body>
+</html>

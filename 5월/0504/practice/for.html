@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@2"></script>
+</head>
+<body>
+    <div id="app">
+        {{msg}}
+        <hr>
+        <h1>배열 데이터</h1>
+        <ul>
+            <li v-for="book in books">I like {{book}}.</li>
+        </ul>
+        <h1>json 데이터</h1>
+        <ul>
+            <li v-for="(value, key, index) in story">
+                {{index+1}}. {{key}} : {{value}}
+            </li>
+        </ul>
+
+        <h1>json array 데이터</h1>
+        <ul>
+            <li v-for="(story, index) in stories">
+                {{index+1}}. {{story.writer}} : {{story.name}}
+            </li>
+        </ul>
+    </div>
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                    msg: "잘가라, 선형아",
+                    books: ["햄릿", "콩쥐 팥쥐", "누가 내치즈를 옮겼을까"],// 배열 타입 - json의 한 종류
+
+                story: {// json 타입, 1개
+                    author: "세익스피어",
+                    title: "tempest",
+                    publisher: "green house",
+                },
+
+                stories: [ // json 타입, 여러 개
+                    {
+                        writer: "james lee",
+                        name: "good job",
+                    },
+                    {
+                        writer: "billy jones",
+                        name: "how are you, today?",
+                    },
+                    {
+                        writer: "david min",
+                        name: "farewell to arms",
+                    },
+                ],
+            },
+        })
+    </script>
+</body>
+</html>
