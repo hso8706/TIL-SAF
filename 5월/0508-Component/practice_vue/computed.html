@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@2"></script><!--cdn-->
+</head>
+<body>
+    <div id="app">
+        <h1>computed</h1>
+        <p>원본 메세지: {{msg}}</p>
+        <p>{{reverseMsg}}</p>
+        <p>{{reverseMsg}}</p>
+        <p>{{reverseMsg}}</p>
+        <hr>
+        <p>{{reverseMsg2}}</p>
+        <p>{{reverseMsg2}}</p>
+        <p>{{reverseMsg2}}</p>
+    </div>
+    <script>
+        new Vue({
+            el: "#app",
+            data(){
+                return{
+                    msg: 'one fine day!'
+                }
+            },
+            //computed : method 형식
+            //내장 api를 이용해서 간단한 연산 등에 이용됨. cache되는 특징
+                // cache : ?
+            //this.msg 값이 변동되지 않으면 cache해 놓은 결과를 이용함
+            computed: {
+                reversedMsg(){
+                    console.log("computed...");
+                    return this.msg.split("").reverse().join();
+                }
+            }
+            methods: {
+                reversedMsg()2{
+                    console.log("computed...");
+                    return this.msg.split("").reverse().join();
+                }
+            }
+        });
+    </script>
+</body>
+</html>

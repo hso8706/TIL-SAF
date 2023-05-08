@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@2"></script>
+</head>
+<body>
+    <div id="app">
+        <p>{{msg}}</p>
+        <h3>{{msg | doSomething}}</h3> <!-- filter는 `|`로 표현 -->
+        <h3>{{msg | toUpper}}</h3>
+        <h3>{{msg2 | toLower}}</h3>
+    </div>
+    <script>
+        new Vue({
+            //el, data, filters, ... : 속성
+            el: "#app",
+            data(){ // component 사용 시 꼭 지금 방식으로 데이터를 작성해야함.
+                return{
+                    msg: 'hello, vue!',
+                    msg2: 'I AM YOUR FATHER!'
+                }
+            },
+            filters:{//원래의 데이터를 가공해서 새로운 결과를 만들어 낼 때 사용됨.
+                //메소드 형식으로 만들며 반드시 하나의 매개변수가 필요함
+                doSomething(val){ //해당 매개변수에 인자로 제공되는 것은 가공 전 데이터(val)이다.
+                    for (let index = 0; index < 3; index++) {
+                        val += "hello!";
+                    }
+                    return val;
+                }, 
+                toUpper(val){
+                    return val.toUpperCase();
+                },
+                toLower(val){
+                    return val.toLowerCase();
+                }
+            }
+        })
+    </script>
+</body>
+</html>

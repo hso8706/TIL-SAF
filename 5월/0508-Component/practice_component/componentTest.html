@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@2"></script><!--cdn-->
+</head>
+<body>
+    <div id="app">
+        <myglobal></myglobal>
+        <myglobal></myglobal>
+        <myglobal></myglobal>
+        <mylocal></mylocal>
+        <yourlocal></yourlocal>
+    </div>
+    <hr>
+    <div id="other">
+        <myglobal></myglobal>
+        <yourglobal></yourglobal>
+        <mylocal></mylocal> <!-- 출력 안 됨 -->
+        <yourlocal></yourlocal> <!-- 출력 안 됨 -->
+    </div>
+    <script>
+        //component : 화면이 있는 재활용 가능한 구성요소. 태그 형식으로 사용됨
+        //종류: 1)전역 컴포넌트, 2)지역 컴포넌트
+
+        //global component
+        //전역 컴포넌트 등록
+        //1번 인자: 문자열, 컴포넌트 명, 2번 인자: 블록, 컴포넌트 내용
+        Vue.component('myglobal', {
+            template: '<div>this is myglobal component</div>',//template 속성: 화면의 정보를 갖는 속성, 해당 컴포넌트가 관리하는 화면(el 속성과 유사)
+            data(){ //data 속성: component가 갖는 data
+                return{ // component를 다룰 땐 꼭 return 하는 형식으로 data를 작성해야한다. 그렇지 않으면 같은 component끼리 같은 data를 공유하게 된다.
+                    num: 123
+                }
+            },
+        });
+        // 연습
+        Vue.component('yourglobal', {
+            // template: '<h1>this is your global component</h1><h1>this is your global component</h1>' // 루트 태그는 하나만 있어야 함. 즉, 하나의 태그 안에 여러 태그가 있는건 괜찮지만, 같은 레벨에 여러 태그가 있는건 불가
+            template: '<h1>this is your global component</h1>'
+        });
+
+        // Vue도 사실 Component의 일종
+        new Vue({
+            el: "#app",
+
+            // 지역 컴포넌트(=> #app 에서만 사용 가능)
+            components: {//여러개의 컴포넌트 등록 가능
+                'mylocal' : {
+                    template: '<div>this is mylocal component</div>'
+                },
+                'yourlocal' : {
+                    template: '<div>this is yourlocal component</div>'
+                }
+            }
+        });
+
+        new Vue({
+            el: "#other"
+        });
+    </script>
+</body>
+</html>

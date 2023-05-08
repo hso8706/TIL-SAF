@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://unpkg.com/vue@2"></script><!--cdn-->
+</head>
+<body>
+    <div id="app">
+    </div>
+    <script>
+        new Vue({
+            el: "#app",
+            data(){
+                return {
+                    msg: 'super man!'
+                }
+            },
+            //watch: method 형식. 관심있는 데이터 이름으로 이름을 정해야 함.
+            //데이터 변화를 서로 감시해서 자동으로 로직을 수행함
+            //서버로부터 데이터를 받아오는 등의 시간이 오래 걸리는 비동기 호출 등에 사용함
+            watch: {
+                msg(newVal, oldVar){
+                    console.log(oldVar, "=>", newVal);
+                }
+            }
+        })
+    </script>
+</body>
+</html>

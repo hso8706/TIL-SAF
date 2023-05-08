@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<link
+			href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+			rel="stylesheet"
+		/>
+
+		<title>Insert title here</title>
+		<script src="https://unpkg.com/vue@2"></script><!--cdn-->
+		
+	</head>
+	<body>
+		<div class="container">
+			<h1>calculator</h1>
+			<form class="form-inline" action="a.html">
+				<input v-model.number="a" class="form-control" /><!-- v.model.number : v-model로 양방향 연결은 하되 숫자만(.number)받겠다는 의미 -->
+				<select v-model="operator" class="form-control">
+					<option>+</option>
+					<option>-</option>
+					<option>*</option>
+					<option>/</option>
+				</select>
+				<input v-model.number="b" class="form-control" />
+				<button class="btn btn-primary" type="submit" @click.prevent="calc()"><!-- @: `v-on:`을 대신하는 키워드 / .prevent : 해당 이벤트만 처리하고 이외의 것은 작용하지 않도록 만듬(submit) -->
+					calculate
+				</button>
+			</form>
+			<!-- <h2>result: {{a}} {{operator}} {{b}} = {{ result }}</h2> -->
+			<h2>result: {{a}} {{operator}} {{b}} = {{ calc2 }}</h2> <!-- computed 사용 -->
+			
+		</div>
+
+		<script>
+			var vm = new Vue({
+				el: ".container",
+				data: {
+					a: 1,
+					b: 2,
+					operator: "+",
+					result: 0,
+				},
+				computed: {
+					calc2(){
+						if(this.operator == "+") return this.a + this.b;
+						else if (this.operator == "-") return this.a - this.b;
+						else if (this.operator == "*") return this.a * this.b;
+						else return this.a / this.b;
+					}
+				},
+				methods: {
+					calc(){
+						if(this.operator == "+") this.result = this.a + this.b;
+						else if (this.operator == "-") this.result = this.a - this.b;
+						else if (this.operator == "*") this.result = this.a * this.b;
+						else this.result = this.a / this.b;
+					}
+				},
+			});
+		</script>
+	</body>
+</html>

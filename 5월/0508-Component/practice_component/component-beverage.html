@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@2"></script><!--cdn-->
+</head>
+<body>
+    <div id="app">
+        <h1>음료를 주문하세요</h1>
+        <h2>총 주문수: {{totalCnt}}</h2>
+        <americano @countup="countlogic(1)" :name="beverage1" :cnt="cnt1"></americano> <cafelatte @countup="countlogic(2)" :name="beverage2" :cnt="cnt2"></cafelatte>
+    </div>
+
+    <script>
+        Vue.component('americano', {
+            template: "<button @click='count'>{{name}}{{cnt}}</button>",
+            props:["name", "cnt"],
+            methods: {
+                count(){
+                    this.$emit('countup');
+                }
+            },
+        })
+
+        Vue.component('cafelatte', {
+            template: "<button @click='count'>{{name}}{{cnt}}</button>",
+            props:["name", "cnt"],
+            methods: {
+                count(){
+                    this.$emit('countup');
+                }
+            },
+        })
+
+        new Vue({
+            el: "#app",
+            data(){
+                return{
+                    totalCnt : 0,
+                    cnt1 : 0,
+                    cnt2 : 0,
+                    beverage1: "아메리카노 - ",
+                    beverage2: "카페라떼 - "
+                }
+            },
+            methods: {
+                countlogic(value){
+                    if(value == 1){
+                        this.cnt1 = this.cnt1 + 1;
+                    }
+                    else {
+                        this.cnt2 = this.cnt2 + 1;
+                    }
+                    this.totalCnt = this.cnt1 + this.cnt2;
+                }
+            }
+        })
+    </script>
+</body>
+</html>

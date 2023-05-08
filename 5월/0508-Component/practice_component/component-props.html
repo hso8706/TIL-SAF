@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@2"></script><!--cdn-->
+</head>
+<body>
+    <div id="app">
+        <child-component msg="123"></child-component>
+        <!-- v-bind사용 -->
+        <child-component :msg="message"></child-component>
+        <child-component :msg="message" :city="city"></child-component>
+    </div>
+    <script>
+        //copmonent 이름 줄 때에는 케밥 스타일 권장(태그로 사용하기 때문에)
+        Vue.component('child-component', {
+            // template: '<h3> {{msg}} </h3>',
+            template: '<h3> {{msg}}, {{city}}</h3>',
+            // props: ["msg"] //prop == property. msg라는 속성을 갖는다는 의미
+            //props는 주로 상위 컴포넌트로부터 값을 받아올 때 사용함
+            props: ["msg", "city"] // 다중 props 사용
+        });
+
+        new Vue({
+            el: "#app",
+            data() {
+                return{
+                    message: '상위 컴포넌트의 메세지',
+                    city: 'seoul'
+                }
+            }
+        })
+    </script>
+</body>
+</html>

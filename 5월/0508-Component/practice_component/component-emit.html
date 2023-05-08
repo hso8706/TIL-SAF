@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@2"></script><!--cdn-->
+</head>
+<body>
+    <div id="app">
+        <child-compo @help="parentMethod(12345)" :msg="message"></child-compo>
+    </div>
+    <script>
+        //button - click event - send() 호출 - emit(help) - parentMethod() 호출 및 파라미터 전달
+        //send: button 태그에서 발생
+        //help: child-compo 태그에서 발생. 즉, child-compo 태그에서 이벤트 작성하면 됨
+        Vue.component('child-compo', {
+            template: '<button @click="send">{{msg}}</button>',
+            props:['msg'],
+            methods:{
+                send(){
+                    this.$emit('help'); // $emit: 이벤트를 발생시키는 메소드, 인자로 제공한 이벤트를 발생시킴(사용자 정의 이벤트를 발생시킬때 사용)
+                }
+            }
+        });
+
+        new Vue({
+            el:"#app",
+            data(){
+                return{
+                    message: 'love me!'
+                }
+            },
+            methods: {
+                parentMethod(value){
+                    alert("이벤트 받음" + value);
+                }
+            },
+        })
+    </script>
+</body>
+</html>
