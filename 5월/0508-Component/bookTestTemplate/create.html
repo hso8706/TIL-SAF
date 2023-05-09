@@ -45,6 +45,7 @@
         name: "create",
         data() {
           return {
+            //v-model로 이어줄 데이터
             isbn: "",
             title: "",
             author: "",
@@ -53,6 +54,7 @@
           };
         },
         methods: {
+          //click event1
           registBook() {
             // 로컬스토리지에 저장된 데이터 가져오기
             const booklist = localStorage.getItem("booklist");

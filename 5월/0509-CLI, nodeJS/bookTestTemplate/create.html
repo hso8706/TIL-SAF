@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>도서관리</title>
+    <link rel="stylesheet" href="./css/main.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <bookheader></bookheader>
+      <bookcreate></bookcreate>
+      <bookfooter></bookfooter>
+    </div>
+    <script type="module">
+      import bookheader from "./components/BookHeader.js"; // import하면서 이름 명시, 명시할 이름으로는 최소 두 단어가 합쳐진 용어를 사용할 것
+      import bookcreate from "./components/BookCreate.js";
+      import bookfooter from "./components/BookFooter.js";
+      new Vue({
+        el: "#app",
+        name: "create",
+        components: {
+          bookheader,
+          bookcreate,
+          bookfooter
+        }
+        
+      });
+    </script>
+  </body>
+</html>

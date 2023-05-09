@@ -1,0 +1,22 @@
+render: h => h(App)
+Vue.js의 기본적인 화면 rendering(DOM 구성) 함수의 간소화 버전
+
+//변천 과정
+#1. 기본 함수 사용
+render: function(createElement){
+    return createElement(App); //App.vue 내용대로 태그 생성함
+}
+
+#2. 간략한 함수 사용
+render(createElement){
+    return createElement(App); //App.vue 내용대로 태그 생성함
+}
+
+#3. 명칭 변경
+//h: hyperscript의 약자로 html구조를 생성하는 스크립트를 의미함.
+render(h){
+    return h(App); //App.vue 내용대로 태그 생성함
+}
+
+#4. 화살표 함수 사용
+render: h => h(App)

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>도서관리</title>
+    <link rel="stylesheet" href="./css/main.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <bookheader></bookheader>
+      <booklist></booklist>
+      <bookfooter></bookfooter>
+    </div>
+    <script type="module">
+
+      import bookheader from "./components/BookHeader.js";
+      import booklist from "./components/BookList.js";
+      import bookfooter from "./components/BookFooter.js";
+
+      new Vue({
+        el: "#app",
+        name: "list",
+        
+        components: {
+          bookheader,
+          booklist,
+          bookfooter
+        }
+        
+      });
+    </script>
+  </body>
+</html>

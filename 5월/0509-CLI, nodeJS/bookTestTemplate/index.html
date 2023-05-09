@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>도서관리</title>
+    <link rel="stylesheet" href="./css/main.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <!-- 상단 : 어떤 화면을 가도 그대로 유지, component로 변경-->
+      <bookheader></bookheader>
+      <!-- 중단 : 화면 이동 시 변경되는 부분, component로 변경-->
+      <bookindex></bookindex>
+      <!-- 하단 : 어떤 화면을 가도 그대로 유지, component로 변경-->
+      <bookfooter></bookfooter>
+    </div>
+
+    <script type="module"> // components를 import 하기 위해서 script 태그 사용, module 속성 : import한 js 객체를 사용하기 위한 속성
+      import bookheader from "./components/BookHeader.js"; // import하면서 이름 명시, 명시할 이름으로는 최소 두 단어가 합쳐진 용어를 사용할 것
+      import bookindex from "./components/BookIndex.js";
+      import bookfooter from "./components/BookFooter.js";
+
+      new Vue({
+        el: "#app",
+        name: "index", // vue 객체에 이름 부여하는 속성, 선택 사항
+        components: { // 지역 컴포넌트 등록
+          //위에서 import한 js 객체들을 받아오는 과정
+          bookheader, // key-value 형태가 아닌 이유 : key, value가 똑같을 때에는 생략
+          bookindex,
+          bookfooter
+        }
+      });
+
+    </script>
+  </body>
+</html>
