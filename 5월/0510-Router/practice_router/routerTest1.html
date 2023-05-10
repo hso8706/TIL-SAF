@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@2"></script><!--cdn for vue-->
+    <script src="https://unpkg.com/vue-router@3"></script><!--cdn for vue-router-->
+</head>
+<body>
+    <div id="app">
+        <h1>router test</h1>
+        <div>
+            <!-- 1. router link : 화면에서는 <a> 태그로 확인됨. to로 지정된 주소로 이동함 -->
+            <router-link to="/main">Main component로 이동</router-link>
+            <router-link to="/sub">Sub component로 이동</router-link>
+        </div>
+        <!-- 2. router view : 링크 경과가 보여지는 영역 -->
+        <router-view></router-view>
+    </div>
+    <script>
+        //3. router view에 연결할 component 준비
+        let main = {template: "<div>Main Component</div>"};
+        let sub = {template: "<div>Sub Component</div>"};
+
+        //4. VueRouter 생성: link와 component간의 mapping 관계 작성
+        let router = new VueRouter({
+            // mode: "history", //#이 붙고 안붙고의 차이(?)
+            routes: [
+                {path: '/main', component: main},
+                {path: '/sub', component: sub}
+            ]
+        });
+
+    
+        new Vue({
+            el: "#app",
+            // router: router //5. VueRouter 정보를 Vue 객체에게 전달
+            router //이름과 값이 똑같은 경우, 생략 가능
+        });
+    </script>
+</body>
+</html>
