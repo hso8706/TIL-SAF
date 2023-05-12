@@ -5,7 +5,8 @@
             <table id="todo-list">
                 <colgroup>
                 <col style="width: 5%" />
-                <col style="width: 40%" />
+                <col style="width: 30%" />
+                <col style="width: 10%" />
                 <col style="width: 10%" />
                 <col style="width: 10%" />
                 <col style="width: 10%" />
@@ -14,25 +15,31 @@
                 </colgroup>
                 <thead>
                 <tr>
+                  
                     <th>번 호</th>
                     <th>할 일</th>
                     <th>작성자</th>
                     <th>시 작</th>
                     <th>종 료</th>
                     <th>실행 여부</th>
+                    <th>체크박스</th>
+                    <th>수 정</th>
                     <th>삭 제</th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr v-for="(todo, index) in todolist" :key="index">
                     <td>{{index + 1}}</td>
-                    <td>
-                      <router-link :to="`/todoview/${todo.no}`">{{todo.content}}</router-link>
-                    </td>
+                    <td>{{todo.content}}</td>
                     <td>{{todo.userid}}</td>
                     <td>{{todo.sdate}}</td>
                     <td>{{todo.edate}}</td>
                     <td>{{todo.done}}</td>
+                    <td>
+                      <input type="checkbox" v-if="todo.done=='Y'" checked @click="doneTodo(todo.no, todo.done)">
+                      <input type="checkbox" v-else unchecked @click="doneTodo(todo.no, todo.done)">
+                    </td>
+                    <router-link :to="`/todomodify/${todo.no}`"><td><button>수 정</button></td></router-link>
                     <td><button @click="deleteOne(todo.no)">삭 제</button></td>
                 </tr>
                 </tbody>
@@ -49,6 +56,7 @@ export default {
     data() {
         return {
           todolist: [],
+          no: ""
         };
       },
       created() {
@@ -70,6 +78,14 @@ export default {
               alert("삭제가 완료되었습니다.");
               this.selectAll();
             });
+        },
+        doneTodo(no, done){
+          http
+            .put("/todoLists/done", {
+              no,
+              done
+            })
+            .then(()=>{this.selectAll();})
         }
       },
 }

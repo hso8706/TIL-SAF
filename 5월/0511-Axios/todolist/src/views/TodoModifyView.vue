@@ -1,21 +1,20 @@
 <template>
   <div>
     <TodoHeader></TodoHeader>
-    <TodoIndex></TodoIndex>
+    <TodoModify></TodoModify>
     <TodoFooter></TodoFooter>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import TodoIndex from '@/components/TodoIndex.vue'
+import TodoModify from '@/components/TodoModify.vue'
 import TodoHeader from '@/components/TodoHeader.vue'
 import TodoFooter from '@/components/TodoFooter.vue'
 
 export default {
   components: {
-    TodoHeader, TodoIndex, TodoFooter
-    // TodoIndex, TodoFooter
+    TodoHeader, TodoModify, TodoFooter
   }
 }
 </script>

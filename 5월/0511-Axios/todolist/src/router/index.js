@@ -1,9 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import TodoHomeView from '../views/TodoHomeView.vue'
-import TodoListView from '../views/TodoListView.vue'
 import TodoCreateView from '../views/TodoCreateView.vue'
-import TodoViewView from '../views/TodoViewView.vue'
+import TodoModifyView from '../views/TodoModifyView.vue'
 import TodoDeleteView from '../views/TodoDeleteView.vue'
 
 Vue.use(VueRouter)
@@ -11,13 +10,8 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
-    name: 'todohome',
+    name: 'todoIndex',
     component: TodoHomeView
-  },
-  {
-    path: '/todolist',
-    name: 'todolist',
-    component: TodoListView
   },
   {
     path: '/todocreate',
@@ -25,15 +19,15 @@ const routes = [
     component: TodoCreateView
   },
   {
-    path: '/todoview/:num',
-    name: 'todoview',
-    component: TodoViewView
+    path: '/tododelete',
+    name: 'todoDeleteAll',
+    component: TodoDeleteView
   },
   {
-    path: '/tododelete/:num',
-    name: 'tododelete',
-    component: TodoDeleteView
-  }
+    path: '/todomodify/:num',
+    name: 'todoModify',
+    component: TodoModifyView
+  },
 ]
 
 const router = new VueRouter({
