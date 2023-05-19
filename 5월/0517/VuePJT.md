@@ -4,14 +4,24 @@
 
 - myrealtrip
 
+### 로고 tool
+
+https://www.canva.com/
+
+### 배경 제거 tool
+
+https://www.remove.bg/ko
+
 ### color
 
 - logo(청록)
   - #025F86
-  - 투명도 0%
+  - rgb(2, 95, 134)
 - 회색류
+  - #95a5a6
   - rgb(149, 165, 166)
 - 흰색
+  - #ffffff
   - rgb(255, 255, 255)
 - font-family
   - 한글 : Arial, 아리알

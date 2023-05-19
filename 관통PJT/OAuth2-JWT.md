@@ -1,14 +1,36 @@
 # 23.05.18
 
-### 인증 흐름도
+### JWT 로그인 인증
 
-- 기존 로그인 및 JWT 이용 방식과 동일
-- 차이는 google에서 Access Token을 제공
-- google에서 제공받은 Access Token으로 google에 저장된 userInfo 요청 및 응답
+- 흐름도
+  - 클라이언트가 백엔드 서버에 로그인 인증 요청(username, password 전송)
+  - Security filtering(JwtAuthenticationFilter)
+  - AuthenticationManager에게 인증 처리 위임
+  - AuthenticationManager가 UserDetailsService에게 UserDetails 조회를 위임
+  - UserDetailsService가 전달받은 username, password를 기반으로 userdetails를 조회한 후 결과를 AuthenticationManager에게 전달
+  - AuthenticationManager가 클라이언트로부터 전달받은 인증 정보(username, password)와 userDetails를 비교하여 인증 처리
+  - JWT 생성 후 클라이언트에 응답 처리
+- 인증 컴포넌트
+  - MemberDetailsService
+    - UserDetails 조회를 담당하는 서비스 객체
+    - .loadUserByUsername() 메소드가 핵심
 
-### JWT 구현
+### JWT 자격 증명 및 검증
 
-1.
+- 흐름도
+  - 클라이언트에서 자격 증명이 필요한 resource(uri)에 대한 request 전송임을 확인
+  - 해당 상황에서 클라이언트는 JWT를 request header에 저장하여 보냄
+  - 백엔드 서버에서는 request header의 JWT를 확인
+    - OncePerRequestFilter를 상속한 필터를 사용
+      - 1 request 당 1번 실행
+    - doFilterInternal 구현
+      - OncePerRequestFilter를 상속하면 doFilter 대신 doFilterInternal를 구현하여 사용
+
+### 인증 타입
+
+- Basic : Base64로 인코딩
+- Bearer : JWT 혹은 OAuth에 대한 토큰
+- ...
 
 ### OAuth2 - JWT 구현
 
