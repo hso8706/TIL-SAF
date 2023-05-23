@@ -1,39 +1,39 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import TodoHomeView from '../views/TodoHomeView.vue'
-import TodoCreateView from '../views/TodoCreateView.vue'
-import TodoModifyView from '../views/TodoModifyView.vue'
-import TodoDeleteView from '../views/TodoDeleteView.vue'
+import Vue from "vue";
+import VueRouter from "vue-router";
+import TodoHomeView from "../views/TodoHomeView.vue";
+import TodoCreateView from "../views/TodoCreateView.vue";
+import TodoModifyView from "../views/TodoModifyView.vue";
+import TodoDeleteView from "../views/TodoDeleteView.vue";
 
-Vue.use(VueRouter)
+Vue.use(VueRouter);
 
 const routes = [
   {
-    path: '/',
-    name: 'todoIndex',
-    component: TodoHomeView
+    path: "/",
+    name: "todoIndex",
+    component: TodoHomeView,
   },
   {
-    path: '/todocreate',
-    name: 'todocreate',
-    component: TodoCreateView
+    path: "/todocreate",
+    name: "todocreate",
+    component: TodoCreateView,
   },
   {
-    path: '/tododelete',
-    name: 'todoDeleteAll',
-    component: TodoDeleteView
+    path: "/tododelete",
+    name: "todoDeleteAll",
+    component: TodoDeleteView,
   },
   {
-    path: '/todomodify/:num',
-    name: 'todoModify',
-    component: TodoModifyView
+    path: "/todomodify/:num",
+    name: "todoModify",
+    component: TodoModifyView,
   },
-]
+];
 
 const router = new VueRouter({
-  mode: 'history',
+  mode: "history",
   base: process.env.BASE_URL,
-  routes
-})
+  routes,
+});
 
-export default router
+export default router;
