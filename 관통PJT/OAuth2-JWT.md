@@ -32,6 +32,10 @@
 - Bearer : JWT 혹은 OAuth에 대한 토큰
 - ...
 
+### OAuth2 - google client
+- 승인된 리디렉션 URI
+  - http://localhost:8080/login/oauth2/code/google
+
 ### OAuth2 - JWT 구현
 
 - flow chart
@@ -43,7 +47,7 @@
 4. google 로그인 화면 오픈
 5. Resouce Owner의 google 로그인 작업 수행
 6. 로그인 성공 시, Authorization Code를 제공 받음(Authorization Server => Backend Server)
-7. Access Token 요청 및 응답
+7. Access Token 요청 및 응답()
    - 해당 Access Token은 Resouce Owner의 resource를 Google Resource Server에 요청하는 용도
 8. Backend 애플리케이션이 Resource Server에 User Info를 요청 및 응답
 9. User Info를 기반으로 Backend 애플리케이션이 JWT 생성 및 Frontend server로 전달
