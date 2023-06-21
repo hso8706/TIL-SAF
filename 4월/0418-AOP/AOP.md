@@ -1,17 +1,27 @@
 # 23.04.18
 
 ## remind
+
 ### IoC
 - framework이 필요한 요소를 제공함(개발자가 만들지 않음)
-- IoC == DI 라고 생각해도 큰 문제는 안된다.(Spring 한정)
+- Spring에 한정해서 IoC == DI 라고 생각해도 큰 문제는 안된다.
+
+
 ### DI
-- 생성자
-- setter
+- 생성자 DI
+- setter DI
+
+
 ### DL; Dependency Lookup
+
+
 ### DI 구현
 - xml
 - xml + annotation
 - java 설정 file : xml이 하던 일을 자바에게 시킴
+  - @Configuration
+
+
 ### Annotation
 - Autowired
   - 타입 기준으로 동일한 객체를 자동을 주입시킴
@@ -24,6 +34,8 @@
   - component-scan, base-package
 
 ## AOP
+
+
 ### Aspect-oriented Programming
 - 관점 지향 프로그래밍
 - 객체 지향 프로그래밍과 같이 프로그래밍 방식 중 하나
@@ -32,11 +44,17 @@
 - 예시. 은행 업무 처리 시스템
   - 핵심 기능: 계좌 이체, 대출 승인, 이자 계산, ...
   - 공통 기능(부가 기능): 로깅, 보안, 트랜젝션, ... 
+
+
 ### 핵심 업무(Core Concern)
 - biz logic
+
+
 ### 공통 업무(Cross-cutting Concern)
 - 핵심 업무를 도와주는 반복적이고 부가적인 일
 - 핵심 업무 중간 중간 끼어들어서 하게 될 작업
+
+
 ### OOP와의 차이
 - OOP라면 핵심 업무 클래스에 공통 업무 작업을 호출하는 코드가 존재할 것임.
 - 이런 혼합 코드를 완전히 분리한 것이 AOP이다.
@@ -45,6 +63,8 @@
   - 핵심 업무 중간에 공통 업무가 끼어드는 것
   - 호출과는 다르다.
   - 위빙은 동적인 작업
+
+
 ### AOP 용어
 - Joinpoint
   - `~~할 때`를 의미하는 용어
@@ -67,11 +87,15 @@
   - 여러 객체에 공통으로 적용되는 공통 관점 사항
   - 공통 로직을 구현하는 클래스
   - Advice를 갖고 있는 클래스
+
+
 ### AOP 예시
 - 게시판
   - Pointcut1 : 글쓰기, 글 수정, 글 삭제 ==> when
   - Advice1 : 로그인 여부 확인 ==> what
   - Aspect : Pointcut1 + Advice1 ==> wher + what : 언제 뭐하니~?
+
+
 ### Spring AOP
 - Spring Framework가 제공하는 Framework
 - Proxy 기반의 AOP
@@ -95,21 +119,29 @@
   - 위 작업은 compile 시점, loading 시점에서 작업이 실행된다
   - proxy는 runtime 시점에 작업함.
   - proxy를 사용하는 이유는 다른 방법보다 성능이 좋진 않지만 가볍기 때문이다. Spring 에서는 가벼워야하므로
+
+
 ### Advice Type
 - Before : Target의 핵심 메소드 실행 전
 - After : Target의 핵심 메소드 실행 후
 - AfterReturning : Target의 핵심 메소드 실행하고 값을 리턴한 후 실행
 - Around : Target의 핵심 메소드 실행 전/후로, 총 두 번 실행
 - AfterThrowing : Target의 핵심 메소드 실행 중 예외 발생 시
+
+
 ### Pointcut 표현식
-![Pointcut 표현식](https://user-images.githubusercontent.com/103169947/232719684-0abc6cfe-4433-44b9-a372-cab5f8e26d9c.PNG)
+![image](https://github.com/hso8706/TIL-SAF/assets/103169947/7c251831-1e5f-4efb-8409-89666b81eb9e)
 - Pointcut의 표기 방법
 - `designator`, `return type`, `method name`, `params` 는 필수 작성 요소
 - `*` : any의 의미(메소드명에도 붙을 수 있음), 혹은 single 파라미터라는 의미
 - `..` : parameter 위치에 작성하는 표기법. 와도되고 안와도 되고
+
+
 ### AOP Framework 종류
-- AspectJ : full-blown, 모든 aspect 관련 기능을 갖고 있는 놈
+- AspectJ : full-blown, 모든 aspect 관련 기능을 갖고 있는 framwork
 - Spring AOP : 메소드 호출할 때만 사용 가능
+
+
 ### Spring AOP 구현 방식
 1. XML 활용
 2. Annotation 활용
@@ -135,7 +167,7 @@
             <version>3.0.7.RELEASE</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/org.aspectj/aspectjrt -->
+      <!-- https://mvnrepository.com/artifact/org.aspectj/aspectjrt -->
 	    <dependency>
 	        <groupId>org.aspectj</groupId>
 	        <artifactId>aspectjrt</artifactId><!-- rt: runtime; proxy -->
