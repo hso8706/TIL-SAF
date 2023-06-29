@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+</head>
+<body>
+    <div>
+        <h1>0947910 websocket test</h1>
+    </div>
+
+    <div>당신의 닉네임을 입력해주세요.</div>
+    <div id="nickname">닉네임 : </div>
+    <input id="nicknameinput" type="text"/>
+    <button id="nicknamebtn">닉네임 셋팅</button>
+    <hr/>
+    <div id="chatpage" style="width: 500px; height: 500px; background-color: greenyellow;"></div>
+
+    <br/>
+    <input type="text" name="" id="sendValue" />
+     <button onclick="sendMessage()">전송!</button>
+    <script>
+        document.getElementById("nicknamebtn").addEventListener("click", setNickname)
+
+        let nickname = "";
+        function setNickname(){
+            nickname = document.getElementById("nicknameinput").value;
+
+            const nickBlock = document.getElementById("nickname");
+            const nickNode = document.createTextNode(nickname);
+            nickBlock.appendChild(nickNode);
+        }
+
+        const ws = new WebSocket("ws://localhost:8080");
+        // const ws = new WebSocket("wss://3f94-1-231-143-12.jp.ngrok.io");
+        
+        function sendMessage(){
+            const value = document.getElementById("sendValue").value;
+
+            ws.send(
+                JSON.stringify({
+                    nickname,
+                    value
+                })
+            );
+        }
+
+        ws.onmessage = (e) => {
+            console.log(e.data);
+            const message = e.data;
+            const chat = document.getElementById("chatpage");
+
+            const messageBlock = document.createElement("div");
+            const textNode = document.createTextNode(message);
+            messageBlock.appendChild(textNode);
+            chat.appendChild(messageBlock);
+        };
+    </script>
+</body>
+</html>
