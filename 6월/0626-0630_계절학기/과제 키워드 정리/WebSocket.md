@@ -27,3 +27,25 @@
 - 푸시 알림
 - 소셜 네트워크
 - IoT 앱
+
+## 구현. WebSocketTest
+### 준비 단계
+- Node.js 설치
+  - 설치 확인: `node -v`
+- `npm init` 명령어 실행
+  - node.js 패키지 매니저
+  - package.json 생성
+- `npm i express` 명령어 실행
+  - express.js 설치
+- package.json에 명령어 추가
+  - "script"부분에 "dev": "nodemon index.js" 추가
+  - `nodemon`: Node.js 애플리케이션에 변화가 생겼을 경우 자동 감지 및 적용 후 서버를 재시작해주는 도구
+  - `index.js`: nodemon으로 관리할 파일
+  - `dev`: `nodemon index.js`를 실행할 키워드
+  - 위와 같이 작성 후 `npm run dev`를 실행하면 nodemon으로 index.js를 관리하며 서버가 실행된다.
+### 패키지 구조 및 코드 설명
+- 상세 설명은 주석으로 메모
+- front
+  - 화면으로 만들 정적페이지를 담을 패키지 경로
+- front/index.html
+  - 화면으로 사용할 정적페이지
