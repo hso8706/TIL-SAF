@@ -50,7 +50,7 @@
 7. Access Token 요청 및 응답()
    - 해당 Access Token은 Resouce Owner의 resource를 Google Resource Server에 요청하는 용도
 8. Backend 애플리케이션이 Resource Server에 User Info를 요청 및 응답
-9. User Info를 기반으로 Backend 애플리케이션이 JWT 생성 및 Frontend server로 전달
+9. Backend 애플리케이션이 JWT 생성 및 Frontend server로 전달
 
 - Components
 
