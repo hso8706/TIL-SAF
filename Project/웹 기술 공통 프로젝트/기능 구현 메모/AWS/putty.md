@@ -35,4 +35,6 @@
   
 ### 결론
 - windows cmd로도 가능
-- terminus와 같은 tool은 그냥 편의 차이
+- terminus와 같은 tool은 그냥 편의성 차이
+- terminus를 사용하자
+  - 통일성을 위해서
