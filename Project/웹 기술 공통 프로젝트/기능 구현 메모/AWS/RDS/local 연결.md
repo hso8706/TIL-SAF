@@ -1,3 +1,5 @@
+### Maria DB 설치
+
 ### mysql client 연결
 - mysql -h {AWS RDS 엔드포인트} -P {포트번호} -u {AWS RDS 마스터 이름} -p
 
