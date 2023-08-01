@@ -1,4 +1,5 @@
 ## Error 1
+
 ### 상황
 - AWS RDS 연결
   - local mysql client에서는 문제없이 연결됨.
@@ -23,3 +24,43 @@
 - yml 파일 들여쓰기 중요
   - 가장 문제가 된 부분은 `datasource` 부분
   - `datasource`는 `spring`의 바로 하위 레벨이어야 한다...
+
+## Error 2
+
+### 상황
+- AWS RDS 연결이 어떤 곳에선 되는데 어떤 곳에선 안되는 문제
+- 에러 코드
+  - 연결 불가, connection time out 같은 메세지가 뜸
+
+### 원인
+- 인바운드 규칙에서 IP 허용 파트가 개인 PC만 허용되어있었기 때문
+
+### 해결
+- RDS 콘솔 접속
+- 데이터베이스 탭
+- 연결 & 보안 탭 - `보안` 부분에 활성화 되어있는 보안 그룹 클릭
+- 이동한 페이지에서 인바운드 규칙 탭 클릭
+- 인바운드 규칙 편집 버튼 클릭
+  - 보안 그룹 규칙 ID
+  - 유형: MYSQL/Aurora
+  - 프로토콜: TCP (고정)
+  - 포트 범위: 3306 (고정)
+  - 소스: 사용자 정의 선택
+  - 돋보기 버튼에서 0.0.0.0/0
+  - 규칙 저장
+
+## Error 3
+
+### 상황
+- 한글 데이터가 들어가지 않는 상황
+  - null, 영어 데이터는 들어가는데 한글 데이터는 아예 접근 조차 안되는 문제
+
+### 원인
+- Maria DB 문제
+- 기본 character set에 utf-8로 되어있지 않음
+
+### 해결
+- 참고 링크(aws rds에서 변경)
+  - https://twofootdog.tistory.com/62
+- local database(예. mysql workbench)에 접속해서 명령어로 변경하기
+- ddl-auto 옵션을 create, create-drop으로 해서 새로 데이터베이스가 초기화 되도록 해야지 적용됨
