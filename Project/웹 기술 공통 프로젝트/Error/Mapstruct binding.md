@@ -1,21 +1,23 @@
 ### 에러메세지
-    - 없음
+- 없음
 
 ### 에러 상황
-    - response body에 createAt의 값이 null로 나옴
+- response body에 createAt의 값이 null로 나옴
 
 ### 원인 분석
-    - db에는 정상적으로 createAt이 저장되고 response body에만 문제 발생
-    - mapper impl을 살펴보니 auditable로 생성하는 createAt에 대한 mapstruct의 매핑이 되지 않음
+- db에는 정상적으로 createAt이 저장되고 response body에만 문제 발생
+- mapper impl을 살펴보니 auditable로 생성하는 createAt에 대한 mapstruct의 매핑이 되지 않음
 
 ### 해결 과정
-    - build.gradle 내 lombok과 mapstruct의 순서 변경
-      - 실패
-    - lombok-mapstruct-binding 0.2.0 라이브러리 추가
-      - 실패
-    - 우선은 추가 작업 후 이후 다른 로컬에서도 이러한 문제가 발생하거나, 다른 작업에서도 같은 문제가 발생하면 추가로 알아볼 예정
+- build.gradle 내 lombok과 mapstruct의 순서 변경
+  - 실패
+- lombok-mapstruct-binding 0.2.0 라이브러리 추가
+  - 실패
+- 우선은 추가 작업 후 이후 다른 로컬에서도 이러한 문제가 발생하거나, 다른 작업에서도 같은 문제가 발생하면 추가로 알아볼 예정
 
 ### 해결
-    - 진짜진짜 어이없네...
-    - dto 필드명과 entity 필드명을 완전히 똑같이 맞추니까 해결되었음. 실수로인한 오타가 존재했다.
-    - 원래 필드명이 동일해야하는지 이유를 모름. mapstruct의 동작 원리를 다시 파악하자 
+- dto 필드명과 entity 필드명을 완전히 똑같이 맞추니까 해결되었음. 실수로인한 오타가 존재했다. (진짜진짜 어이없네...)
+- 원래 필드명이 동일해야하는지 이유를 모름. mapstruct의 동작 원리를 다시 파악하자
+- 동작 원리
+  - 기본 매핑 규칙 : 매핑되는 객체 간 필드명을 일치시켜야함.
+  - 변형 매핑 규칙 : 매핑되는 객체 간 매핑 로직을 직접 짜거나, @Mapping 어노테이션을 사용해서 매핑 규칙을 명시해줄 수 있음. 이러한 방법을 사용하는 경우에는 필드명을 일치시키지 않아도 됨.

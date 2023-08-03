@@ -50,3 +50,4 @@ org.springframework.dao.DataAccessResourceFailureException: could not execute st
 ### 해결 방법
 - `@Column(name = "")` 속성을 붙이지 않으면 해결되는 듯 함.
   - 하지만 원인도 모르고 문제가 언제 발생하는지도 모르기 때문에 확실하지는 않다.
+- 더 스터디하여 해결을 밝혀야 할 듯 하다.

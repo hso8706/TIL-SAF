@@ -5,6 +5,7 @@
 - 로드 밸런스
   - 동시 접속으로인한 문제 발생을 줄여줌
 
+### 추가 스터디 필요
 
 ### 참고 링크
 - https://whatisthenext.tistory.com/123
