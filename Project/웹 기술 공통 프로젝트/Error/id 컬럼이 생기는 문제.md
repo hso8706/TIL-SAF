@@ -43,3 +43,10 @@ org.springframework.dao.DataAccessResourceFailureException: could not execute st
 - 처음엔 user_profile_id 만 정상적으로 존재하지만, 이후에 프론트에서 테스트를 하다보면 id라는 컬럼이 새로 생김
 - id 컬럼이 생기면서 id를 찾을 수 없다는 에러와 함께 문제가 발생
 - userProfile에서 계속 에러가 발생
+
+### 해결 원인
+- 모름
+
+### 해결 방법
+- `@Column(name = "")` 속성을 붙이지 않으면 해결되는 듯 함.
+  - 하지만 원인도 모르고 문제가 언제 발생하는지도 모르기 때문에 확실하지는 않다.
