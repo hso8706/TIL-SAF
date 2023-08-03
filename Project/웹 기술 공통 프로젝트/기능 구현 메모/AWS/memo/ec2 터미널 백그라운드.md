@@ -21,3 +21,6 @@ nohup: ignoring input and appending output to 'nohup.out' // 이 명령어가 �
 
 ### 프로세스 종료
 - `kill -9 [프로세스 id]`
+  
+### 백그라운드 로그 확인
+- `tail -f nohup.out`
