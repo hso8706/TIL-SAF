@@ -47,7 +47,16 @@ org.springframework.dao.DataAccessResourceFailureException: could not execute st
 ### 해결 원인
 - 모름
 
-### 해결 방법
+### 해결 과정
+
+1. 실패
 - `@Column(name = "")` 속성을 붙이지 않으면 해결되는 듯 함.
   - 하지만 원인도 모르고 문제가 언제 발생하는지도 모르기 때문에 확실하지는 않다.
-- 더 스터디하여 해결을 밝혀야 할 듯 하다.
+  - 더 스터디하여 해결을 밝혀야 할 듯 하다.
+- 실패 상황
+  - 기본 id column의 이름이 `id`으로 생성되지만, 이번엔 `porfile_id`라는 새로운 컬럼이 도중에 생긴다
+
+2. 
+- 같은 방법으로 진행하되 ddl-auto: none 설정으로 진행
+- 느낌이지만 postman으로 테스트를 진행할 땐 문제가 없었음.
+  - front와 연결에서 문제가 있을 수 있다는 의심이 든다.

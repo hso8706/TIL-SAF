@@ -25,5 +25,5 @@
     - 204 no content code
 
 ### Exception
-    - userService.findVerifiedUser() 메서드를 사용함으로써 get, delete handler는 user-id가 잘못되었거나, 없으면 예외 발생
-    - 404, User not found
+- 404, User not found
+  - userService.findVerifiedUser() 메서드를 사용함으로써 get, delete handler는 user-id가 잘못되었거나, 없으면 예외 발생
