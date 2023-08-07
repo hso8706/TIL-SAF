@@ -24,3 +24,6 @@ nohup: ignoring input and appending output to 'nohup.out' // 이 명령어가 �
   
 ### 백그라운드 로그 확인
 - `tail -f nohup.out`
+
+### 사용하는 포트 확인
+- `lsof -i :{포트 번호}`
