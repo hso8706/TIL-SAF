@@ -5,6 +5,8 @@
 - 풀 명령어
 ```
 nohup java -jar {파일명.jar} &
+nohup java -jar BackEnd-0.0.1-SNAPSHOT.jar &
+
 
 nohup: ignoring input and appending output to 'nohup.out' // 이 명령어가 뜨면 성공
 ```
@@ -27,3 +29,4 @@ nohup: ignoring input and appending output to 'nohup.out' // 이 명령어가 �
 
 ### 사용하는 포트 확인
 - `lsof -i :{포트 번호}`
+- `netstat -tuln`
