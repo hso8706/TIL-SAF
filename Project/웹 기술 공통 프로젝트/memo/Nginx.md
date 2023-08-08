@@ -37,5 +37,12 @@
   - `http://{ec2 ip 혹은 ec2 도메인}`으로 접속; 아래와 같은 화면
     ![image](https://github.com/hso8706/Useful/assets/103169947/7d7311f5-2300-4eef-a538-b3a8adde6da6)
 
-## 2. Nginx 프록시 설정 추가하여 Spring boot 프로젝트 연결하기
-- 짱피티한테 물어본대로 다시하기.
+## 2. Nginx 로 domain 연결하기
+### Domina 생성(구매)
+- 가비아 
+
+
+## 3. Nginx 프록시 설정 추가하여 Spring boot 프로젝트 연결하기
+
+## 4. Nginx 이용해서 SSL 인증 받기
+  ![image](https://github.com/hso8706/Useful/assets/103169947/0db1648e-71f2-4d70-89ab-ee50779d67c5)

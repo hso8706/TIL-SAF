@@ -30,3 +30,6 @@ nohup: ignoring input and appending output to 'nohup.out' // 이 명령어가 �
 ### 사용하는 포트 확인
 - `lsof -i :{포트 번호}`
 - `netstat -tuln`
+
+### ip 확인
+- `curl ifconfig.me`
