@@ -32,6 +32,9 @@
 - docker logs {container 이름}
   - docker로 진행되는 프로세스의 로그를 확인하는 명령어
 
+- docker stop {container-name-or-id}
+  - 실행중인 도커 컨테이너 종료 명령어
+
 ### 옵션
 - --name : 컨테이너 이름 설정 옵션
 - -p {local port}:{container port} : 로컬 호스트와 컨테이너 포트를 연결하는 옵션
