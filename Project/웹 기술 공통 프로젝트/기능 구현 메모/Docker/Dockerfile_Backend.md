@@ -27,7 +27,7 @@ CMD java -jar BackEnd-0.0.1-SNAPSHOT.jar
   - CMD에서 해당 jar 파일을 실행시키는 명령어 설정
 
 ### 2. Dockerfile build 하기
-- `docker build -t {docker hub 사용자명}/{docker hub 레포지토리명}:{구분자 혹은 버전}`
+- `docker build -t {docker hub 사용자명}/{docker hub 레포지토리명}:{구분자 혹은 버전} {dockerfile 경로}`
 
 ### 3. Docker login 및 push
 - `docker login`
