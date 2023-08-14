@@ -5,6 +5,8 @@
 - 풀 명령어
 ```
 nohup java -jar {파일명.jar} &
+
+java -jar BackEnd-0.0.1-SNAPSHOT.jar
 nohup java -jar BackEnd-0.0.1-SNAPSHOT.jar &
 
 

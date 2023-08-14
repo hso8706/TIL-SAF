@@ -47,3 +47,8 @@
 
 ## 4. Nginx 이용해서 SSL 인증 받기
   ![image](https://github.com/hso8706/Useful/assets/103169947/0db1648e-71f2-4d70-89ab-ee50779d67c5)
+
+
+
+### 재시작 명령어
+`sudo systemctl restart nginx`
