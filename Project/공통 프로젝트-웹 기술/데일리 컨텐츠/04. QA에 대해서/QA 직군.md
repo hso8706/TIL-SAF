@@ -6,7 +6,11 @@
 - 전략가 및 매니져
 
 ### 참고 링크
-- 
+  [QA=테스트라는 잘못된 인식이 불러온 오해 : QA가 하는 일]
+  https://www.datanet.co.kr/news/articleView.html?idxno=119652
+
+  [QA 직군의 대 혼란 :cyclone: 나는 대체 뭘 하는 사람인가?]
+  https://hsoochun.tistory.com/497
 
 ### QA 고민
 - 내 성향이 QA에 조금 맞을수도 있겠다.

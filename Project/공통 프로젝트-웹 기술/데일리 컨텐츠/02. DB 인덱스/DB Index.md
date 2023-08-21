@@ -61,3 +61,6 @@
 - Update 빈번하지 않은 컬럼
 - Join시 자주 사용하는 컬럼
 - Index를 생성할 때 가장 효율적인 자료형은 정수형 자료(가변적 데이터는 비효율적)
+
+### 링크
+- https://techblog.woowahan.com/2687/
